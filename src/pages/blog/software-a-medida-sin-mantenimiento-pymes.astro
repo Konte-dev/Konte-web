@@ -1,0 +1,113 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Software a Medida para PYMES Sin Coste de Mantenimiento: ¿Cómo Es Posible?",
+  "image": "https://konte.es/img/blog/hero-software.png",
+  "author": { "@type": "Organization", "name": "Konte Solutions" },
+  "datePublished": "2026-04-01",
+  "url": "https://konte.es/blog/software-a-medida-sin-mantenimiento-pymes",
+  "keywords": ["software a medida PYME", "sin costes mantenimiento", "desarrollo AppScript", "web app Google", "aplicación empresa sin servidor"]
+});
+---
+
+<BlogLayout
+  title="Software a Medida para PYMES Sin Coste de Mantenimiento | Konte"
+  description="El modelo de desarrollo tradicional te cobra cada mes. Existe una alternativa basada en Google AppScript que elimina los costes recurrentes sin sacrificar potencia."
+  jsonLd={jsonLd}
+  ogImage="/img/blog/hero-software.png"
+>
+  <div class="w-full h-64 md:h-96 overflow-hidden">
+    <img src="/img/blog/hero-software.png" alt="Software a medida para PYMES sin costes de mantenimiento mensual" class="w-full h-full object-cover" />
+  </div>
+
+  <article class="py-16 bg-white dark:bg-darkBg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        {["Software a Medida", "PYME", "AppScript", "Sin Mantenimiento"].map(tag => (
+          <span class="px-3 py-1 bg-gray-100 dark:bg-darkSurface text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+        ))}
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight">
+        Software a Medida para PYMES Sin Coste de Mantenimiento: ¿Cómo Es Posible?
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-400 mb-12 pb-8 border-b border-gray-200 dark:border-gray-800">
+        <span>1 de abril, 2026</span><span>&middot;</span>
+        <span>9 min de lectura</span><span>&middot;</span>
+        <span class="text-lightAccent dark:text-darkAccent font-bold">Konte Solutions</span>
+      </div>
+
+      <div class="prose prose-lg dark:prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-a:text-lightAccent dark:prose-a:text-darkAccent prose-strong:text-gray-900 dark:prose-strong:text-white">
+
+        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed">"Software a medida" suena automáticamente a: presupuesto alto, contrato de mantenimiento mensual indefinido y dependencia total del proveedor. En la mayoría de casos, eso es así. Pero existe un modelo diferente, y está cambiando la manera en que las PYMES digitalizan sus operaciones.</p>
+
+        <h2>El modelo tradicional de software a medida y sus costes ocultos</h2>
+        <p>Cuando una empresa contrata desarrollo de software personalizado con una agencia tradicional, el proceso suele ser: pago inicial de desarrollo (entre 5.000€ y 50.000€), contrato de mantenimiento mensual (15-25% del coste inicial anual), licencias de servidores en AWS o Azure (50€-500€/mes según el tráfico) y actualizaciones de seguridad y dependencias (coste adicional a negociar).</p>
+        <p>El resultado es que muchas PYMES acaban pagando más en mantenimiento durante 3 años que lo que costó el desarrollo original. Y si deciden cambiar de proveedor, el código muchas veces no les pertenece realmente, o está tan enredado que nadie más puede mantenerlo.</p>
+
+        <h2>El modelo sin servidores basado en Google Workspace</h2>
+        <p>El enfoque que utilizamos en Konte funciona sobre un principio diferente: <strong>usar la infraestructura de Google como plataforma de despliegue</strong>. Google Apps Script permite crear aplicaciones web completas que corren directamente en los servidores de Google, sin que tengas que contratar ni gestionar ninguno.</p>
+        <p>¿Qué significa esto en práctica? Que el "servidor" de tu aplicación es Google. Y Google te cobra 0€ al mes por usarlo (dentro de los límites de Workspace, que son muy amplios para cualquier PYME).</p>
+
+        <h2>¿Qué tipo de aplicaciones se pueden desarrollar con AppScript?</h2>
+        <p>La respuesta sorprende a muchos: prácticamente cualquier herramienta de gestión interna que necesita una PYME. Algunos ejemplos reales que hemos desarrollado:</p>
+        <ul>
+          <li><strong>Sistema de gestión de inventario multi-sede</strong> para cadenas de restauración con cientos de locales</li>
+          <li><strong>ERP simplificado para manufactura</strong> con control de órdenes de producción, lotes y trazabilidad</li>
+          <li><strong>Plataforma de seguimiento de clientes</strong> para entrenadores personales con gestión de pagos recurrentes</li>
+          <li><strong>Dashboard financiero para constructoras</strong> con control de presupuestos por obra y flujo de caja</li>
+          <li><strong>CRM de captación de leads</strong> integrado con formularios web y automatización de seguimiento</li>
+        </ul>
+
+        <h2>Las limitaciones reales (y cuándo sí necesitas un servidor)</h2>
+        <p>Ser honesto es parte de nuestro modelo. AppScript tiene limitaciones que hay que conocer:</p>
+        <ul>
+          <li>No es adecuado para aplicaciones con miles de usuarios concurrentes</li>
+          <li>El tiempo de ejecución máximo de un script es de 6 minutos por ejecución</li>
+          <li>No es ideal para procesamiento intensivo de datos en tiempo real</li>
+          <li>Las actualizaciones de interfaz requieren recargar la página (no es una SPA completa)</li>
+        </ul>
+        <p>Para la mayoría de aplicaciones de gestión interna de una PYME (1-100 usuarios, operaciones de gestión estándar), estas limitaciones no son un obstáculo.</p>
+
+        <h2>El modelo de propiedad del código</h2>
+        <p>Un aspecto fundamental del modelo Konte: <strong>el código es 100% tuyo desde el día 1</strong>. No hay licencias de uso, no hay dependencia del proveedor para que la aplicación siga funcionando. Te entregamos el código fuente completo, documentado, y te formamos para que cualquier desarrollador pueda mantenerlo si algún día decides hacerlo internamente.</p>
+        <p>Esta filosofía de propiedad total es lo que nos distingue de los modelos SaaS, donde técnicamente no posees nada: pagas por usar la plataforma de otra empresa, con sus limitaciones, su roadmap y su política de precios.</p>
+
+        <h2>Comparativa de costes a 3 años</h2>
+        <p>Para una herramienta de gestión interna estándar (gestión de clientes, pedidos o inventario para una PYME de 5-20 empleados):</p>
+        <ul>
+          <li><strong>SaaS genérico</strong> (Salesforce, Monday, etc.): 150-500€/mes = 5.400€-18.000€ en 3 años</li>
+          <li><strong>Desarrollo tradicional a medida</strong>: 15.000€ inicial + 300€/mes mantenimiento = 25.800€ en 3 años</li>
+          <li><strong>Modelo Konte (AppScript)</strong>: 2.500-8.000€ único + 0€/mes = 2.500-8.000€ total</li>
+        </ul>
+        <p>La diferencia es enorme. Y la experiencia de uso es más personalizada que cualquier SaaS genérico.</p>
+
+        <div class="not-prose my-10 p-8 bg-gray-900 dark:bg-darkSection border-2 border-gray-700 rounded-2xl">
+          <h3 class="font-display font-black text-2xl uppercase mb-4 text-white">¿Qué herramienta necesita tu empresa?</h3>
+          <p class="mb-6 text-gray-300">Cuéntanos el proceso que quieres digitalizar y te decimos en 24 horas si es viable con nuestro modelo y cuánto costaría. Sin compromiso.</p>
+          <a href="/#calendly" class="inline-block px-8 py-4 bg-lightAccent dark:bg-darkAccent text-white dark:text-black font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-lg">
+            Evaluar mi proyecto &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="py-16 bg-gray-50 dark:bg-darkSection border-t border-gray-200 dark:border-gray-900">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="font-display text-2xl font-black uppercase mb-8 text-gray-900 dark:text-white">Artículos relacionados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="/blog/automatizacion-google-sheets-appscript" class="block p-6 bg-white dark:bg-darkSurface border-2 border-gray-200 dark:border-gray-800 rounded-xl hover:border-lightAccent dark:hover:border-darkAccent transition-colors group">
+          <p class="text-xs font-bold uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-2">AppScript</p>
+          <h3 class="font-display font-black text-lg uppercase text-gray-900 dark:text-white group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors leading-tight">Automatización en Google Sheets con AppScript</h3>
+        </a>
+        <a href="/blog/excel-vs-google-sheets-empresa" class="block p-6 bg-white dark:bg-darkSurface border-2 border-gray-200 dark:border-gray-800 rounded-xl hover:border-lightAccent dark:hover:border-darkAccent transition-colors group">
+          <p class="text-xs font-bold uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-2">Productividad</p>
+          <h3 class="font-display font-black text-lg uppercase text-gray-900 dark:text-white group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors leading-tight">Excel vs Google Sheets: Cuándo hacer el cambio</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+</BlogLayout>

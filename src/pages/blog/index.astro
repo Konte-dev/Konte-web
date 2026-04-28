@@ -1,0 +1,156 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const posts = [
+  {
+    slug: "automatizacion-google-sheets-appscript",
+    title: "Automatización en Google Sheets con AppScript: La Guía Definitiva para PYMES",
+    excerpt: "Descubre cómo eliminar el trabajo manual en tu empresa usando Google Apps Script. Scripts, triggers automáticos y casos de uso reales para ahorrar más de 5 horas semanales.",
+    image: "/img/blog/hero-automatizacion.png",
+    date: "2026-03-15",
+    readTime: "8 min",
+    tags: ["AppScript", "Automatización", "Google Sheets"]
+  },
+  {
+    slug: "dashboard-tiempo-real-google-sheets",
+    title: "Cómo Crear un Dashboard en Tiempo Real con Google Sheets y Looker Studio",
+    excerpt: "Los dashboards estáticos son historia. Aprende a conectar tus datos operativos con Looker Studio para tener KPIs en tiempo real sin pagar licencias de BI caras.",
+    image: "/img/blog/hero-dashboard.png",
+    date: "2026-03-22",
+    readTime: "7 min",
+    tags: ["Dashboard", "Looker Studio", "KPIs"]
+  },
+  {
+    slug: "formularios-leads-magnet-google-sheets",
+    title: "Formularios Lead Magnet Conectados a Google Sheets: Captura Leads Sin CRM Caro",
+    excerpt: "Convierte tu tráfico web en clientes potenciales con un sistema de captación automatizado. Formulario + Google Sheets + email automático. Sin Mailchimp ni HubSpot.",
+    image: "/img/blog/hero-leads.png",
+    date: "2026-03-28",
+    readTime: "6 min",
+    tags: ["Lead Magnet", "Formularios", "CRM"]
+  },
+  {
+    slug: "software-a-medida-sin-mantenimiento-pymes",
+    title: "Software a Medida para PYMES Sin Coste de Mantenimiento: ¿Cómo Es Posible?",
+    excerpt: "El modelo de desarrollo tradicional te cobra cada mes. Existe una alternativa basada en Google AppScript que elimina los costes recurrentes sin sacrificar potencia ni funcionalidad.",
+    image: "/img/blog/hero-software.png",
+    date: "2026-04-01",
+    readTime: "9 min",
+    tags: ["Software a Medida", "PYME", "AppScript"]
+  },
+  {
+    slug: "excel-vs-google-sheets-empresa",
+    title: "Excel vs Google Sheets para Empresas en 2026: Cuándo Hacer el Cambio",
+    excerpt: "No se trata de cuál es mejor: se trata de cuál es mejor para ti. Analizamos las 5 señales de que tu empresa ya superó a Excel y cuándo Google Sheets (con AppScript) es la respuesta.",
+    image: "/img/blog/hero-excel-vs-sheets.png",
+    date: "2026-04-01",
+    readTime: "6 min",
+    tags: ["Excel", "Google Sheets", "Productividad"]
+  }
+];
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog de Konte – Automatización y Software para PYMES",
+  "description": "Artículos prácticos sobre automatización con Google Sheets, AppScript, dashboards y captación de leads para pequeñas y medianas empresas.",
+  "url": "https://konte.es/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Konte Solutions"
+  }
+});
+---
+
+<BlogLayout
+  title="Blog de Automatización y Software para PYMES | Konte"
+  description="Artículos prácticos sobre automatización con Google Sheets, AppScript, dashboards en tiempo real y captación de leads para pequeñas y medianas empresas."
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="py-20 md:py-24 bg-white dark:bg-darkBg border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="inline-block px-4 py-2 bg-gray-900 dark:bg-darkText text-white dark:text-darkSurface font-bold text-xs uppercase tracking-widest mb-6">Recursos y Conocimiento</div>
+      <h1 class="font-display text-5xl md:text-7xl font-black uppercase tracking-tight mb-6 leading-tight">
+        El Blog de<br/>
+        <span class="text-lightAccent dark:text-darkAccent">Konte.</span>
+      </h1>
+      <p class="text-xl text-lightTextSec dark:text-darkTextSec max-w-2xl leading-relaxed">
+        Guías prácticas sobre automatización con Google Sheets, desarrollo con AppScript y estrategias de digitalización para PYMES. Sin rodeos, sin teoría innecesaria.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts Grid -->
+  <section class="py-20 bg-white dark:bg-darkBg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Featured Post (first one) -->
+      <a href={`/blog/${posts[0].slug}`} class="block mb-16 group">
+        <article class="grid md:grid-cols-2 gap-0 border-2 border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-lightAccent dark:hover:border-darkAccent transition-all duration-300 shadow-lg hover:shadow-2xl">
+          <div class="relative overflow-hidden h-64 md:h-auto">
+            <img src={posts[0].image} alt={posts[0].title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 bg-lightAccent dark:bg-darkAccent text-white dark:text-black text-xs font-bold uppercase tracking-widest rounded">Destacado</span>
+            </div>
+          </div>
+          <div class="p-8 md:p-10 bg-white dark:bg-darkSurface flex flex-col justify-center">
+            <div class="flex flex-wrap gap-2 mb-4">
+              {posts[0].tags.map(tag => (
+                <span class="px-2 py-1 bg-gray-100 dark:bg-darkBg text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+              ))}
+            </div>
+            <h2 class="font-display text-2xl md:text-3xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors">
+              {posts[0].title}
+            </h2>
+            <p class="text-lightTextSec dark:text-darkTextSec mb-6 leading-relaxed">{posts[0].excerpt}</p>
+            <div class="flex items-center gap-4 text-sm text-gray-400">
+              <span>{posts[0].date}</span>
+              <span>&middot;</span>
+              <span>{posts[0].readTime} de lectura</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Rest of posts -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {posts.slice(1).map(post => (
+          <a href={`/blog/${post.slug}`} class="block group">
+            <article class="border-2 border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-lightAccent dark:hover:border-darkAccent transition-all duration-300 shadow-md hover:shadow-xl h-full flex flex-col">
+              <div class="relative overflow-hidden h-52">
+                <img src={post.image} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-6 bg-white dark:bg-darkSurface flex flex-col flex-1">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  {post.tags.map(tag => (
+                    <span class="px-2 py-1 bg-gray-100 dark:bg-darkBg text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+                  ))}
+                </div>
+                <h2 class="font-display text-xl font-black uppercase tracking-tight mb-3 text-gray-900 dark:text-white leading-tight group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors flex-1">
+                  {post.title}
+                </h2>
+                <p class="text-sm text-lightTextSec dark:text-darkTextSec mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                <div class="flex items-center gap-4 text-xs text-gray-400 mt-auto">
+                  <span>{post.date}</span>
+                  <span>&middot;</span>
+                  <span>{post.readTime} de lectura</span>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-50 dark:bg-darkSection border-t border-gray-200 dark:border-gray-900">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-black uppercase mb-4 text-gray-900 dark:text-white">¿Listo para automatizar tu empresa?</h2>
+      <p class="text-lightTextSec dark:text-darkTextSec mb-8 text-lg">Agenda una sesión de diagnóstico gratuita y te decimos exactamente qué podemos automatizar en tu caso.</p>
+      <a href="/#calendly" class="inline-flex items-center gap-2 px-10 py-4 bg-lightAccent dark:bg-darkAccent text-white dark:text-black font-black uppercase tracking-widest hover:-translate-y-1 transition-transform shadow-[6px_6px_0_0_rgba(0,0,0,0.2)]">
+        Agenda tu diagnóstico gratuito
+      </a>
+    </div>
+  </section>
+</BlogLayout>

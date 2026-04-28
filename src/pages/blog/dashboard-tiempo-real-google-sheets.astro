@@ -1,0 +1,114 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cómo Crear un Dashboard en Tiempo Real con Google Sheets y Looker Studio",
+  "image": "https://konte.es/img/blog/hero-dashboard.png",
+  "author": { "@type": "Organization", "name": "Konte Solutions" },
+  "datePublished": "2026-03-22",
+  "url": "https://konte.es/blog/dashboard-tiempo-real-google-sheets",
+  "keywords": ["dashboard tiempo real Google Sheets", "Looker Studio PYME", "KPIs empresa"]
+});
+---
+
+<BlogLayout
+  title="Dashboard en Tiempo Real con Google Sheets y Looker Studio | Konte"
+  description="Conecta tus datos operativos con Looker Studio para tener KPIs en tiempo real sin pagar licencias de BI caras. Guía práctica para PYMES."
+  jsonLd={jsonLd}
+  ogImage="/img/blog/hero-dashboard.png"
+>
+  <div class="w-full h-64 md:h-96 overflow-hidden">
+    <img src="/img/blog/hero-dashboard.png" alt="Dashboard en tiempo real con Google Sheets y Looker Studio" class="w-full h-full object-cover" />
+  </div>
+
+  <article class="py-16 bg-white dark:bg-darkBg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        {["Dashboard", "Looker Studio", "KPIs"].map(tag => (
+          <span class="px-3 py-1 bg-gray-100 dark:bg-darkSurface text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+        ))}
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight">
+        Dashboard en Tiempo Real con Google Sheets y Looker Studio
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-400 mb-12 pb-8 border-b border-gray-200 dark:border-gray-800">
+        <span>22 de marzo, 2026</span><span>&middot;</span>
+        <span>7 min de lectura</span><span>&middot;</span>
+        <span class="text-lightAccent dark:text-darkAccent font-bold">Konte Solutions</span>
+      </div>
+
+      <div class="prose prose-lg dark:prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-a:text-lightAccent dark:prose-a:text-darkAccent prose-strong:text-gray-900 dark:prose-strong:text-white">
+
+        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed">Tomar decisiones de negocio sin datos actualizados es como conducir mirando por el retrovisor. La mayoría de PYMES dependen de informes Excel preparados manualmente el viernes por la tarde, con datos que ya tienen 48 horas de retraso. Existe una solución mejor, gratuita y extremadamente potente.</p>
+
+        <h2>El problema con los informes tradicionales</h2>
+        <p>El flujo clásico en una PYME: alguien recopila datos durante la semana, consolida en Excel, crea gráficas manualmente y lo envía por correo el viernes. Para cuando llega a tus manos, los datos tienen días de retraso. Y si esa persona está de vacaciones, el informe sencillamente no llega.</p>
+
+        <h2>¿Qué es Looker Studio y por qué es perfecto para PYMES?</h2>
+        <p><strong>Looker Studio</strong> es la herramienta de Business Intelligence de Google. Es <strong>completamente gratuita</strong>, corre en la nube y se conecta nativamente con Google Sheets. La combinación de Google Sheets como base de datos + Looker Studio como visualización es una de las soluciones de BI más potentes y económicas disponibles para empresas que no quieren pagar decenas de miles de euros en Tableau o Power BI.</p>
+
+        <h2>Cómo conectar Google Sheets con Looker Studio</h2>
+        <ul>
+          <li><strong>Paso 1:</strong> Estructura tus datos en Google Sheets correctamente (una fila por registro, cabeceras claras, sin celdas combinadas)</li>
+          <li><strong>Paso 2:</strong> Abre Looker Studio y crea un nuevo informe</li>
+          <li><strong>Paso 3:</strong> Conecta tu Google Sheet como fuente de datos</li>
+          <li><strong>Paso 4:</strong> Diseña los gráficos, KPIs y tablas que necesitas</li>
+          <li><strong>Paso 5:</strong> Comparte el enlace con tu equipo</li>
+        </ul>
+        <p>Cuando alguien actualiza datos en el Google Sheet, el dashboard de Looker Studio se actualiza automáticamente. No hay "refrescar" manual ni exportación necesaria.</p>
+
+        <h2>KPIs esenciales para tu dashboard empresarial</h2>
+        <h3>Para negocios de ventas:</h3>
+        <ul>
+          <li>Volumen de ventas diario vs. objetivo del mes</li>
+          <li>Ticket medio y tendencia semanal</li>
+          <li>Tasa de conversión de presupuestos a ventas</li>
+        </ul>
+        <h3>Para producción o manufactura:</h3>
+        <ul>
+          <li>Unidades producidas vs. planificadas por turno</li>
+          <li>Tasa de rechazo o merma del día</li>
+          <li>Stock de materias primas en tiempo real</li>
+        </ul>
+        <h3>Para negocios de servicios:</h3>
+        <ul>
+          <li>Ocupación y disponibilidad del equipo</li>
+          <li>Tiempo de respuesta a nuevos clientes</li>
+          <li>Ingresos recurrentes vs. proyectados</li>
+        </ul>
+
+        <h2>El paso avanzado: AppScript como motor de datos</h2>
+        <p>La magia ocurre cuando combinas Looker Studio con <strong>automatizaciones de AppScript</strong>. Los scripts recopilan datos de múltiples fuentes, los limpian y consolidan automáticamente. El resultado: un dashboard que se actualiza solo, con datos fiables, disponible 24/7 desde cualquier dispositivo.</p>
+
+        <h2>¿Son seguros los datos en Google Sheets?</h2>
+        <p>Sí. Google Workspace cumple con ISO 27001, SOC 2/3 y ofrece cifrado en tránsito y en reposo. Para la mayoría de PYMES, la infraestructura de seguridad de Google es muy superior a lo que podrían implementar con soluciones propias.</p>
+
+        <div class="not-prose my-10 p-8 bg-gray-900 dark:bg-darkSection border-2 border-gray-700 rounded-2xl">
+          <h3 class="font-display font-black text-2xl uppercase mb-4 text-white">¿Quieres ver un ejemplo real?</h3>
+          <p class="mb-6 text-gray-300">Te mostramos en 30 minutos cómo quedaría tu dashboard personalizado con tus datos y métricas específicas.</p>
+          <a href="/#calendly" class="inline-block px-8 py-4 bg-lightAccent dark:bg-darkAccent text-white dark:text-black font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-lg">
+            Ver demo gratuita &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="py-16 bg-gray-50 dark:bg-darkSection border-t border-gray-200 dark:border-gray-900">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="font-display text-2xl font-black uppercase mb-8 text-gray-900 dark:text-white">Artículos relacionados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="/blog/automatizacion-google-sheets-appscript" class="block p-6 bg-white dark:bg-darkSurface border-2 border-gray-200 dark:border-gray-800 rounded-xl hover:border-lightAccent dark:hover:border-darkAccent transition-colors group">
+          <p class="text-xs font-bold uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-2">Automatización</p>
+          <h3 class="font-display font-black text-lg uppercase text-gray-900 dark:text-white group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors leading-tight">Automatización en Google Sheets con AppScript</h3>
+        </a>
+        <a href="/blog/software-a-medida-sin-mantenimiento-pymes" class="block p-6 bg-white dark:bg-darkSurface border-2 border-gray-200 dark:border-gray-800 rounded-xl hover:border-lightAccent dark:hover:border-darkAccent transition-colors group">
+          <p class="text-xs font-bold uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-2">Software</p>
+          <h3 class="font-display font-black text-lg uppercase text-gray-900 dark:text-white group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors leading-tight">Software a Medida Sin Mantenimiento para PYMES</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+</BlogLayout>

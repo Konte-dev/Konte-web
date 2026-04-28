@@ -1,0 +1,112 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Excel vs Google Sheets para Empresas en 2026: Cuándo Hacer el Cambio",
+  "image": "https://konte.es/img/blog/hero-excel-vs-sheets.png",
+  "author": { "@type": "Organization", "name": "Konte Solutions" },
+  "datePublished": "2026-04-01",
+  "url": "https://konte.es/blog/excel-vs-google-sheets-empresa",
+  "keywords": ["Excel vs Google Sheets empresa", "migrar Excel Google Sheets", "Google Sheets colaborativo", "cuándo dejar Excel"]
+});
+---
+
+<BlogLayout
+  title="Excel vs Google Sheets para Empresas en 2026: Cuándo Hacer el Cambio | Konte"
+  description="No se trata de cuál es mejor en abstracto: se trata de cuál es mejor para tu empresa. Las 5 señales de que ya superaste Excel y cuándo Google Sheets con AppScript es la respuesta."
+  jsonLd={jsonLd}
+  ogImage="/img/blog/hero-excel-vs-sheets.png"
+>
+  <div class="w-full h-64 md:h-96 overflow-hidden">
+    <img src="/img/blog/hero-excel-vs-sheets.png" alt="Excel vs Google Sheets para empresas y PYMES en 2026" class="w-full h-full object-cover" />
+  </div>
+
+  <article class="py-16 bg-white dark:bg-darkBg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        {["Excel", "Google Sheets", "Productividad", "PYME"].map(tag => (
+          <span class="px-3 py-1 bg-gray-100 dark:bg-darkSurface text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+        ))}
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight">
+        Excel vs Google Sheets para Empresas en 2026: Cuándo Hacer el Cambio
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-400 mb-12 pb-8 border-b border-gray-200 dark:border-gray-800">
+        <span>1 de abril, 2026</span><span>&middot;</span>
+        <span>6 min de lectura</span><span>&middot;</span>
+        <span class="text-lightAccent dark:text-darkAccent font-bold">Konte Solutions</span>
+      </div>
+
+      <div class="prose prose-lg dark:prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-a:text-lightAccent dark:prose-a:text-darkAccent prose-strong:text-gray-900 dark:prose-strong:text-white">
+
+        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed">El debate Excel vs Google Sheets no tiene una respuesta única. Excel sigue siendo una herramienta extraordinaria. Pero hay un punto en el crecimiento de cualquier empresa donde Excel empieza a ser el problema, no la solución. Reconocer ese momento es clave.</p>
+
+        <h2>Cuándo Excel sigue siendo la mejor opción</h2>
+        <p>Seamos honestos. Excel tiene ventajas reales que Google Sheets todavía no iguala en todos los aspectos:</p>
+        <ul>
+          <li><strong>Rendimiento con datasets masivos:</strong> Si trabajas habitualmente con hojas de más de 500.000 filas y fórmulas complejas, Excel sigue siendo más rápido</li>
+          <li><strong>Funciones estadísticas avanzadas:</strong> Excel tiene funciones de análisis estadístico que Google Sheets aún no ha implementado</li>
+          <li><strong>Trabajo sin conexión:</strong> Si tu negocio opera en zonas sin internet estable, Excel offline es más fiable</li>
+          <li><strong>Integración con sistemas legacy:</strong> Muchos ERP empresariales se integran nativamente con Excel</li>
+        </ul>
+
+        <h2>Las 5 señales de que tu empresa ya superó a Excel</h2>
+
+        <h3>1. Varias personas necesitan trabajar en el mismo archivo a la vez</h3>
+        <p>Excel tiene colaboración en tiempo real desde Microsoft 365, pero funciona con frecuencia con retrasos y conflictos de versión. Si tu equipo gasta tiempo enviando archivos por email y fusionando versiones, estás perdiendo horas reales cada semana. <strong>Google Sheets resuelve esto de forma nativa y fiable</strong>.</p>
+
+        <h3>2. El archivo "base" ya no sabe quién lo modificó ni cuándo</h3>
+        <p>Google Sheets guarda un historial de versiones completo de cada celda: quién la modificó, cuándo y qué valor tenía antes. Si alguna vez has perdido datos importantes en Excel porque alguien guardó encima sin querer, sabes exactamente por qué esto importa.</p>
+
+        <h3>3. Necesitas acceder a los datos desde el móvil o fuera de la oficina</h3>
+        <p>La app móvil de Google Sheets es significativamente mejor que la de Excel para trabajo colaborativo en tiempo real. Y cualquier dato que alguien introduzca en la oficina está disponible en tu móvil en segundos, sin sincronizaciones manuales.</p>
+
+        <h3>4. Quieres automatizar procesos sin pagar por herramientas externas</h3>
+        <p>Las macros de Excel (VBA) funcionan solo en el ordenador donde están instaladas. <strong>Google Apps Script</strong> corre en la nube, puede enviar emails, interactuar con Calendar, Drive, Forms y APIs externas, y se ejecuta automáticamente en cualquier momento, incluso cuando el ordenador está apagado. No hay herramienta comparable en el ecosistema de Excel que no tenga un coste adicional.</p>
+
+        <h3>5. Quieres conectar tus datos a dashboards en tiempo real</h3>
+        <p>La integración nativa de Google Sheets con Looker Studio (Google Data Studio) es gratuita y extremadamente potente. El equivalente en Excel requiere Power BI (con coste por usuario) o exportaciones manuales.</p>
+
+        <h2>La pregunta que nadie hace: ¿Y si usas Google Sheets como base de datos real?</h2>
+        <p>Aquí está la verdadera ventaja competitiva que la mayoría desconoce. Google Sheets, cuando está bien estructurado y conectado a AppScript, puede actuar como la base de datos de una aplicación web completa. No un simple registro de datos, sino el backend de una herramienta de gestión con interfaz de usuario, roles de acceso y automatizaciones.</p>
+        <p>Es lo que hacemos en Konte: construimos aplicaciones de gestión interna para PYMES usando Google Sheets como capa de datos y AppScript como motor de lógica y automatización. El resultado es funcional como cualquier SaaS, pero sin los costes mensuales.</p>
+
+        <h2>La transición práctica: Cómo migrar de Excel a Google Sheets</h2>
+        <p>Si has decidido dar el paso, el proceso es más sencillo de lo que parece:</p>
+        <ul>
+          <li>Google Sheets puede abrir y convertir archivos .xlsx directamente</li>
+          <li>La mayoría de fórmulas de Excel son compatibles directamente (VLOOKUP, SUMIF, INDEX/MATCH, etc.)</li>
+          <li>Las tablas dinámicas tienen un equivalente funcional en Google Sheets</li>
+          <li>Los gráficos se recrean fácilmente</li>
+        </ul>
+        <p>Lo que sí requiere trabajo es migrar las macros de VBA: necesitan reescribirse en AppScript. Pero ese proceso también es la oportunidad de mejorarlas y añadir capacidades que VBA nunca pudo darte.</p>
+
+        <div class="not-prose my-10 p-8 bg-lightAccent dark:bg-darkAccent text-white dark:text-black rounded-2xl">
+          <h3 class="font-display font-black text-2xl uppercase mb-4">¿Tienes Excel con macros que necesitas migrar?</h3>
+          <p class="mb-6 opacity-90">Auditamos tus archivos Excel actuales y te decimos exactamente qué se puede migrar, mejorar y automatizar con Google Sheets y AppScript.</p>
+          <a href="/#calendly" class="inline-block px-8 py-4 bg-white dark:bg-darkSurface text-lightAccent dark:text-darkAccent font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-lg">
+            Auditar mis archivos Excel &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="py-16 bg-gray-50 dark:bg-darkSection border-t border-gray-200 dark:border-gray-900">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="font-display text-2xl font-black uppercase mb-8 text-gray-900 dark:text-white">Artículos relacionados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="/blog/automatizacion-google-sheets-appscript" class="block p-6 bg-white dark:bg-darkSurface border-2 border-gray-200 dark:border-gray-800 rounded-xl hover:border-lightAccent dark:hover:border-darkAccent transition-colors group">
+          <p class="text-xs font-bold uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-2">Automatización</p>
+          <h3 class="font-display font-black text-lg uppercase text-gray-900 dark:text-white group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors leading-tight">Automatización en Google Sheets con AppScript</h3>
+        </a>
+        <a href="/blog/dashboard-tiempo-real-google-sheets" class="block p-6 bg-white dark:bg-darkSurface border-2 border-gray-200 dark:border-gray-800 rounded-xl hover:border-lightAccent dark:hover:border-darkAccent transition-colors group">
+          <p class="text-xs font-bold uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-2">Dashboard</p>
+          <h3 class="font-display font-black text-lg uppercase text-gray-900 dark:text-white group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors leading-tight">Dashboard en Tiempo Real con Google Sheets</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+</BlogLayout>

@@ -1,0 +1,229 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Konte Solutions",
+  "description": "Agencia de software a medida para PYMES. Especialistas en Google Sheets, AppScript, dashboards en tiempo real y formularios de alta conversión.",
+  "url": "https://konte.es/servicios",
+  "serviceType": [
+    "Automatización Google Sheets",
+    "Desarrollo AppScript",
+    "Dashboards Looker Studio",
+    "Formularios Lead Magnet",
+    "Software a Medida"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "España"
+  },
+  "priceRange": "Consultar presupuesto"
+});
+
+const services = [
+  {
+    id: "mejora-hojas-calculo",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></svg>`,
+    title: "Mejora de Hojas de Cálculo en Google Sheets",
+    subtitle: "Transforma tu Excel caótico en un sistema profesional",
+    description: "Auditamos, reestructuramos y optimizamos tus hojas de cálculo existentes. Eliminamos fórmulas rotas, creamos estructuras limpias con validación de datos, tablas dinámicas profesionales y flujos de trabajo intuitivos para todo tu equipo.",
+    benefits: [
+      "Auditoría completa de fórmulas y errores existentes",
+      "Estructura de datos limpia y escalable",
+      "Validación de datos y menús desplegables inteligentes",
+      "Tablas dinámicas y resúmenes automáticos",
+      "Formatos condicionales y alertas visuales",
+      "Documentación y formación para tu equipo"
+    ],
+    forWho: "Empresas que trabajan en Google Sheets pero acumulan errores, datos duplicados o sistemas que nadie entiende.",
+    accent: "blue"
+  },
+  {
+    id: "automatizacion-appscript",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
+    title: "Automatizaciones en Google Sheets con AppScript",
+    subtitle: "Elimina el trabajo manual. Para siempre.",
+    description: "Desarrollamos scripts personalizados con Google Apps Script que automatizan cualquier proceso repetitivo: envío de correos, generación de informes, alertas de stock, sincronización de datos entre hojas, y más. Todo funciona en segundo plano, 24/7, sin que tengas que hacer nada.",
+    benefits: [
+      "Scripts de envío automático de correos y alertas",
+      "Triggers programados (diarios, semanales, por evento)",
+      "Generación automática de informes en PDF",
+      "Sincronización de datos entre múltiples hojas",
+      "Integración con Gmail, Calendar y Drive",
+      "Alertas de stock mínimo y umbrales críticos"
+    ],
+    forWho: "Negocios que repiten las mismas tareas manualmente cada día: copiar-pegar datos, enviar resúmenes, actualizar registros.",
+    accent: "yellow"
+  },
+  {
+    id: "software-customizado",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/><polyline points="8 11 10 13 14 9"/></svg>`,
+    title: "Software 100% Customizado a tu Negocio",
+    subtitle: "Una web-app completa construida sobre Google. Sin servidores.",
+    description: "Desarrollamos aplicaciones web completas y a medida usando Google AppScript como backend y plataforma de despliegue. Interfaces profesionales con login, roles de usuario, paneles de control y lógica de negocio específica para tu sector. Sin costes de servidor ni mantenimiento mensual.",
+    benefits: [
+      "Aplicación web accesible desde cualquier dispositivo",
+      "Sistema de login y roles de usuario",
+      "Diseño de interfaz profesional y responsive",
+      "Lógica de negocio 100% personalizada",
+      "Base de datos en Google Sheets (gratuita y segura)",
+      "0€/mes en servidores o mantenimiento de infraestructura"
+    ],
+    forWho: "PYMES que necesitan una herramienta interna potente pero no pueden permitirse pagar cientos de euros mensuales en SaaS genéricos.",
+    accent: "blue"
+  },
+  {
+    id: "creacion-formularios",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>`,
+    title: "Creación de Formularios Profesionales",
+    subtitle: "Recoge datos perfectamente organizados desde el primer clic.",
+    description: "Diseñamos formularios personalizados, mucho más potentes que Google Forms, conectados directamente a tu Google Sheet. Cada respuesta llega formateada, categorizada y lista para usar. Con validaciones inteligentes, lógica condicional y notificaciones automáticas.",
+    benefits: [
+      "Diseño personalizado con tu imagen corporativa",
+      "Lógica condicional (preguntas que cambian según respuestas)",
+      "Validación inteligente de campos",
+      "Conexión directa a Google Sheets en tiempo real",
+      "Notificaciones automáticas al equipo",
+      "Respuestas formateadas y listas para analizar"
+    ],
+    forWho: "Empresas que recopilan datos (pedidos, registros, encuestas, solicitudes) y quieren que lleguen ordenados y sin errores.",
+    accent: "yellow"
+  },
+  {
+    id: "formularios-leads-magnet",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6 0 19.79 19.79 0 0 1-3.07 8.67A2 2 0 0 1 4.11 21h-3a2 2 0 0 1-2-2.18 19.79 19.79 0 0 1 3.07-8.67 19.5 19.5 0 0 1 0-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 1.11 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+    title: "Formularios Tipo Lead Magnet de Alta Conversión",
+    subtitle: "Convierte visitantes en clientes. Automáticamente.",
+    description: "Creamos formularios optimizados para la captación de leads, integrados en tu web o en landing pages independientes. Cada prospecto se registra automáticamente en tu Google Sheet-CRM, recibe un email de bienvenida automatizado y activa notificaciones a tu equipo comercial.",
+    benefits: [
+      "Landing page de captación optimizada para conversión",
+      "CRM en Google Sheets con segmentación automática",
+      "Email de confirmación automático al prospecto",
+      "Alerta inmediata a tu equipo comercial",
+      "Dashboard de seguimiento de leads en tiempo real",
+      "Integración con tus campañas de Ads y redes sociales"
+    ],
+    forWho: "Negocios que invierten en publicidad digital (Google Ads, Meta Ads) y quieren capturar y gestionar leads de forma profesional y automática.",
+    accent: "blue"
+  },
+  {
+    id: "dashboards-tiempo-real",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><rect x="3" y="3" width="18" height="18" rx="2" fill="none"/></svg>`,
+    title: "Dashboards en Tiempo Real de tus Datos",
+    subtitle: "Toma decisiones basadas en datos, no en intuición.",
+    description: "Diseñamos y desarrollamos paneles de control (dashboards) conectados en tiempo real a tus datos en Google Sheets o Looker Studio. KPIs, gráficos, tendencias y alertas. Accesibles desde cualquier dispositivo, actualizados automáticamente y personalizados para tu sector y métricas clave.",
+    benefits: [
+      "Dashboard 100% personalizado con tus KPIs",
+      "Actualización en tiempo real sin intervención manual",
+      "Acceso desde móvil, tablet y ordenador",
+      "Gráficos interactivos y filtros dinámicos",
+      "Alertas automáticas cuando un indicador baja del umbral",
+      "Vista ejecutiva y vista operativa en el mismo panel"
+    ],
+    forWho: "Directivos y gerentes que necesitan visibilidad total de sus operaciones sin esperar a que alguien les prepare un informe manual.",
+    accent: "yellow"
+  }
+];
+---
+
+<BlogLayout
+  title="Servicios de Automatización Google Sheets y AppScript | Konte"
+  description="Mejora tus hojas de cálculo, automatiza con AppScript, crea dashboards en tiempo real y formularios lead magnet. Software a medida para PYMES sin costes de mantenimiento."
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 bg-white dark:bg-darkBg border-b border-gray-200 dark:border-gray-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-5 dark:opacity-10">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-lightAccent dark:bg-darkAccent rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="inline-block px-4 py-2 bg-gray-900 dark:bg-darkText text-white dark:text-darkSurface font-bold text-xs uppercase tracking-widest mb-6">Nuestros Servicios</div>
+      <h1 class="font-display text-5xl md:text-7xl font-black uppercase tracking-tight mb-6 leading-tight">
+        Todo lo que tu PYME<br/>
+        <span class="text-lightAccent dark:text-darkAccent">necesita digitalizar.</span>
+      </h1>
+      <p class="text-xl text-lightTextSec dark:text-darkTextSec max-w-3xl leading-relaxed">
+        Desde mejorar una hoja de cálculo hasta construir una aplicación web completa. Trabajamos sobre la infraestructura de Google que ya tienes, sin servidores y sin costes mensuales.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 bg-white dark:bg-darkBg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-8">
+        {services.map((service, i) => (
+          <article id={service.id} class="grid md:grid-cols-2 gap-0 border-2 border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden group hover:border-lightAccent dark:hover:border-darkAccent transition-all duration-300 shadow-lg hover:shadow-2xl">
+            <!-- Left: Info -->
+            <div class="p-8 md:p-10 flex flex-col justify-between bg-white dark:bg-darkSurface">
+              <div>
+                <div class={`w-14 h-14 mb-6 ${service.accent === 'yellow' ? 'text-darkAccent' : 'text-lightAccent'}`} set:html={service.icon} />
+                <div class={`inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4 rounded ${service.accent === 'yellow' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400' : 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'}`}>
+                  Servicio 0{i + 1}
+                </div>
+                <h2 class="font-display text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 text-gray-900 dark:text-white leading-tight">
+                  {service.title}
+                </h2>
+                <p class="text-lightAccent dark:text-darkAccent font-bold mb-4">{service.subtitle}</p>
+                <p class="text-lightTextSec dark:text-darkTextSec leading-relaxed mb-6">{service.description}</p>
+                <div class="bg-gray-50 dark:bg-darkBg border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                  <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">Ideal para &rarr;</p>
+                  <p class="text-sm text-gray-700 dark:text-gray-300">{service.forWho}</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <a href="/#calendly" class={`inline-flex items-center gap-2 px-6 py-3 font-bold text-sm uppercase tracking-wide transition-all hover:-translate-y-1 ${service.accent === 'yellow' ? 'bg-darkAccent text-black' : 'bg-lightAccent text-white'} shadow-[4px_4px_0_0_rgba(0,0,0,0.15)]`}>
+                  Solicitar este servicio &rarr;
+                </a>
+              </div>
+            </div>
+            <!-- Right: Benefits -->
+            <div class={`p-8 md:p-10 flex flex-col justify-center ${service.accent === 'yellow' ? 'bg-gray-900 dark:bg-darkSection' : 'bg-gray-50 dark:bg-darkSection'}`}>
+              <h3 class={`font-display font-bold text-sm uppercase tracking-widest mb-6 ${service.accent === 'yellow' ? 'text-darkAccent' : 'text-lightAccent dark:text-darkAccent'}`}>¿Qué incluye?</h3>
+              <ul class="space-y-4">
+                {service.benefits.map(b => (
+                  <li class="flex items-start gap-3">
+                    <svg class={`w-5 h-5 flex-shrink-0 mt-0.5 ${service.accent === 'yellow' ? 'text-darkAccent' : 'text-lightAccent dark:text-darkAccent'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class={`text-sm font-medium ${service.accent === 'yellow' ? 'text-gray-300' : 'text-gray-700 dark:text-gray-300'}`}>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Philosophy -->
+  <section class="py-20 bg-gray-50 dark:bg-darkSection border-y border-gray-200 dark:border-gray-900">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="inline-block px-4 py-2 bg-lightAccent dark:bg-darkAccent text-white dark:text-black font-bold text-xs uppercase tracking-widest mb-6">Nuestra filosofía de precios</div>
+      <h2 class="font-display text-4xl md:text-5xl font-black uppercase mb-6 text-gray-900 dark:text-white">
+        Pago único.<br/><span class="text-lightAccent dark:text-darkAccent">Cero mantenimiento mensual.</span>
+      </h2>
+      <p class="text-xl text-lightTextSec dark:text-darkTextSec mb-10 leading-relaxed">
+        Cada proyecto se presupuesta de forma individual según sus requisitos. El precio lo pagas una sola vez. No hay cuotas mensuales, no hay licencias ocultas, no hay dependencia. El sistema vive en tu Google Workspace y es 100% tuyo.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {[
+          { num: "0€", label: "Coste mensual de servidor", desc: "Todo corre sobre la infraestructura gratuita de Google" },
+          { num: "100%", label: "Código propiedad tuya", desc: "Te entregamos el código fuente completo y documentado" },
+          { num: "24/7", label: "Disponibilidad del sistema", desc: "Los scripts automáticos trabajan incluso cuando tu oficina está cerrada" }
+        ].map(stat => (
+          <div class="p-6 bg-white dark:bg-darkSurface border-2 border-gray-200 dark:border-gray-800 rounded-xl text-center">
+            <div class="font-display font-black text-4xl text-lightAccent dark:text-darkAccent mb-2">{stat.num}</div>
+            <div class="font-bold text-sm uppercase tracking-wide text-gray-900 dark:text-white mb-2">{stat.label}</div>
+            <div class="text-xs text-lightTextSec dark:text-darkTextSec">{stat.desc}</div>
+          </div>
+        ))}
+      </div>
+      <a href="/#calendly" class="inline-flex items-center gap-2 px-10 py-5 bg-lightAccent dark:bg-darkAccent text-white dark:text-black font-black text-lg uppercase tracking-widest hover:-translate-y-1 transition-transform shadow-[8px_8px_0_0_rgba(0,0,0,0.2)]">
+        Solicitar Presupuesto Sin Compromiso
+      </a>
+    </div>
+  </section>
+</BlogLayout>
