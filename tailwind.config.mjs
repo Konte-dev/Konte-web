@@ -8,7 +8,7 @@ export default {
         darkBg: '#232323',
         darkSurface: '#2c2c2c',
         darkSection: '#000000',
-        darkAccent: '#EAB308', /* Voltio / Amarillo industrial */
+        darkAccent: '#0055FF', /* Electric Blue (Unified) */
         darkText: '#EDEDED',
         darkTextSec: '#A3A3A3',
         lightBg: '#F3F4F6',
@@ -23,5 +23,7 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

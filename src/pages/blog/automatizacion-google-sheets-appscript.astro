@@ -22,9 +22,17 @@ const jsonLd = JSON.stringify({
   jsonLd={jsonLd}
   ogImage="/img/blog/hero-automatizacion.png"
 >
-  <!-- Hero Image -->
-  <div class="w-full h-64 md:h-96 overflow-hidden">
-    <img src="/img/blog/hero-automatizacion.png" alt="Automatización en Google Sheets con AppScript para PYMES" class="w-full h-full object-cover" />
+  <!-- Hero Image Section -->
+  <div class="relative w-full h-64 md:h-[450px] overflow-hidden bg-gray-900 border-b-4 border-gray-900">
+    <img src="/img/blog/hero-automatizacion.png" alt="Automatización en Google Sheets con AppScript para PYMES" class="w-full h-full object-cover opacity-90" />
+    
+    <!-- Floating Label (HTML instead of baked in image) -->
+    <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div class="bg-lightAccent text-white p-6 md:p-10 border-4 border-white shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] transform -rotate-1 max-w-lg text-center transition-transform hover:rotate-0 duration-500 pointer-events-auto">
+        <h2 class="font-display font-black text-4xl md:text-6xl uppercase leading-none tracking-tighter mb-2">Automatización</h2>
+        <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-white/80">Google Apps Script x Konte</p>
+      </div>
+    </div>
   </div>
 
   <!-- Article -->
@@ -48,67 +56,76 @@ const jsonLd = JSON.stringify({
       </div>
 
       <!-- Content -->
-      <div class="prose prose-lg dark:prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-a:text-lightAccent dark:prose-a:text-darkAccent prose-strong:text-gray-900 dark:prose-strong:text-white">
+      <div class="prose prose-lg md:prose-xl dark:prose-invert max-w-none 
+        prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-headings:tracking-tighter
+        prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-p:leading-relaxed
+        prose-strong:text-gray-900 dark:prose-strong:text-white prose-strong:font-black
+        prose-a:text-lightAccent dark:prose-a:text-darkAccent prose-a:no-underline hover:prose-a:underline
+        prose-li:text-gray-600 dark:prose-li:text-gray-400">
 
-        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed mb-8">Si tu equipo sigue copiando datos entre hojas manualmente, enviando el mismo correo de resumen cada lunes a las 8 de la mañana, o calculando totales que podrían calcularse solos, estás perdiendo entre 3 y 10 horas semanales. Horas que pagas y que no generan valor real.</p>
+        <p class="text-2xl font-medium text-gray-900 dark:text-white leading-tight mb-12 border-l-4 border-lightAccent pl-6">
+          Si tu equipo sigue perdiendo horas en tareas que un robot podría hacer en segundos, no solo estás perdiendo tiempo: estás quemando dinero y talento.
+        </p>
 
-        <p><strong>Google Apps Script (AppScript)</strong> es la herramienta que cambia las reglas del juego para cualquier empresa que trabaja en Google Workspace. Y lo mejor: es completamente gratuita.</p>
+        <p>En el mundo de la PYME, la palabra "automatización" suele sonar a software carísimo o implementaciones interminables. Sin embargo, hay una herramienta que ya tienes, que es <strong>100% gratuita</strong> y que puede ahorrarle a tu equipo entre 3 y 10 horas semanales de trabajo basura: <strong>Google Apps Script</strong>.</p>
 
-        <h2>¿Qué es Google Apps Script y por qué debería importarte?</h2>
+        <h2>¿Qué es exactamente Google Apps Script?</h2>
 
-        <p>Google Apps Script es el lenguaje de programación <strong>integrado directamente en Google Sheets, Gmail, Calendar y Drive</strong>. No necesitas instalar nada. No necesitas contratar un servidor. No necesitas un ingeniero DevOps para mantenerlo.</p>
-
-        <p>Es JavaScript ejecutándose directamente dentro de tu ecosistema de Google. Sus scripts pueden leer y escribir en cualquier hoja de cálculo, enviar correos desde tu cuenta, crear eventos en Calendar, generar documentos en Drive o hacer llamadas a APIs externas.</p>
-
-        <p>La barrera de entrada es baja. El potencial es enorme. Y el coste es cero.</p>
-
-        <h2>5 automatizaciones con AppScript que puedes implementar esta semana</h2>
-
-        <h3>1. Envío automático de informes y resúmenes por correo</h3>
-        <p>Imagina que cada lunes a las 7:45 AM, tu equipo comercial recibe automáticamente un resumen de las ventas de la semana anterior, extraído de tu Google Sheet, formateado y enviado desde tu cuenta de Gmail. Sin que nadie tenga que hacer nada.</p>
-        <p>Con AppScript, esto es un script de 20 líneas más un trigger programado. Una vez configurado, funciona para siempre sin intervención manual.</p>
-
-        <h3>2. Alertas de stock mínimo en tiempo real</h3>
-        <p>Si gestionas inventario en Google Sheets, puedes programar un script que revise automáticamente cada hora si algún producto ha bajado del stock mínimo definido. Cuando lo detecta, envía una alerta directa por Gmail o incluso por WhatsApp Business API.</p>
-        <p>Este tipo de <strong>automatización de alertas en Google Sheets</strong> puede evitar roturas de stock que cuestan miles de euros en ventas perdidas.</p>
-
-        <h3>3. Generación automática de presupuestos o facturas en PDF</h3>
-        <p>Un trigger en AppScript puede detectar cuando marcas una fila como "Presupuesto Aprobado" y automáticamente: generar un documento PDF con los datos del cliente, guardarlo en una carpeta de Drive y enviárselo al cliente por correo. Todo en menos de 10 segundos.</p>
-
-        <h3>4. Sincronización de datos entre múltiples hojas y usuarios</h3>
-        <p>Si varios departamentos trabajan en hojas separadas y necesitas un resumen consolidado, AppScript puede sincronizarlas automáticamente cada noche, limpiando duplicados, estandarizando formatos y dejando el resumen listo para la reunión de las 9 AM.</p>
-
-        <h3>5. Registro automático de datos desde formularios externos</h3>
-        <p>Cada vez que alguien rellena un formulario en tu web (Google Forms, Tally, Typeform, o un formulario personalizado), AppScript puede procesar los datos, asignarlos al comercial correspondiente, enviar un email de bienvenida al prospecto y crear una fila en tu CRM de Google Sheets en cuestión de segundos.</p>
-
-        <h2>Triggers: La clave de la automatización real</h2>
-        <p>Lo que hace verdaderamente poderoso a AppScript son los <strong>triggers automáticos</strong>. Un trigger es básicamente una instrucción que dice: "ejecuta este script cuando ocurra X". Hay varios tipos:</p>
+        <p>Piénsalo como el "cerebro" oculto de Google Workspace. Es un lenguaje de programación basado en JavaScript que vive dentro de tus hojas de cálculo, documentos y correos. </p>
+        
+        <p>Lo que lo hace único para una empresa es:</p>
         <ul>
-          <li><strong>Al abrir el documento:</strong> se ejecuta cada vez que alguien abre la hoja</li>
-          <li><strong>Al editar:</strong> se activa cuando alguien modifica una celda específica</li>
-          <li><strong>Por tiempo:</strong> se ejecuta cada hora, día, semana, o en una hora concreta</li>
-          <li><strong>Al enviar un formulario:</strong> responde inmediatamente cuando alguien envía datos</li>
+          <li><strong>Cero Instalación:</strong> No necesitas descargar nada ni configurar servidores.</li>
+          <li><strong>Acceso Total:</strong> Puede leer, escribir y conectar Sheets con Gmail, Calendar y Drive.</li>
+          <li><strong>Coste de Ejecución:</strong> Cero. Google te regala la potencia de cómputo necesaria.</li>
         </ul>
-        <p>Combinando diferentes tipos de triggers, puedes crear flujos de trabajo completamente automatizados que reaccionan en tiempo real a lo que ocurre en tu negocio.</p>
 
-        <h2>Comparativa de costes: AppScript vs Zapier vs Make</h2>
-        <p>Zapier y Make son excelentes herramientas de automatización, pero tienen un coste mensual significativo que escala con el número de tareas automatizadas. Para una PYME con 10-20 automatizaciones activas, puedes estar pagando entre 50€ y 300€ al mes.</p>
-        <p><strong>AppScript es gratuito.</strong> Dentro de los límites de Google Workspace (muy generosos para la mayoría de empresas), puedes ejecutar miles de automatizaciones al mes sin pagar un euro adicional.</p>
-        <p>La contrapartida es que AppScript requiere código. No es un "arrastrar y soltar" como Zapier. Pero eso también significa que es infinitamente más flexible y potente para casos de uso específicos de tu negocio.</p>
+        <h2>5 Formas Reales de Recuperar tu Tiempo esta Semana</h2>
 
-        <h2>¿Cuándo necesitas un desarrollador profesional de AppScript?</h2>
-        <p>AppScript tiene curvas de aprendizaje. Con un buen prompt de ChatGPT puedes crear scripts básicos, pero para lógica compleja, integraciones con APIs externas, manejo de errores robusto o sistemas que deben funcionar sin fallos en un entorno empresarial, necesitas a alguien que sepa lo que hace.</p>
-        <p>En Konte nos especializamos exactamente en esto: <strong>desarrollar automatizaciones con AppScript que funcionan de verdad</strong>, con documentación, manejo de errores y formación para tu equipo. Y sin costes mensuales de mantenimiento.</p>
+        <h3>1. Reportes que se envían solos</h3>
+        <p>¿Alguien en tu equipo dedica los lunes por la mañana a extraer datos y enviar un resumen por email? Con un script de 15 líneas, puedes programar que a las 8:00 AM, el sistema recoja los datos de la semana, genere el resumen y lo envíe por Gmail. <strong>Sin intervención humana.</strong></p>
 
-        <div class="not-prose my-10 p-8 bg-lightAccent dark:bg-darkAccent text-white dark:text-black rounded-2xl">
-          <h3 class="font-display font-black text-2xl uppercase mb-4">¿Cuántas horas semanales podrías ahorrar?</h3>
-          <p class="mb-6 opacity-90">Agenda una sesión de diagnóstico gratuita. Analizamos tus procesos actuales e identificamos exactamente qué se puede automatizar y cuánto tiempo ahorrarías.</p>
-          <a href="/#calendly" class="inline-block px-8 py-4 bg-white dark:bg-darkSurface text-lightAccent dark:text-darkAccent font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-lg">
-            Agendar Diagnóstico Gratuito &rarr;
+        <h3>2. Control de Stock Inteligente</h3>
+        <p>Deja de revisar celdas una a una. Podemos programar una alerta que, en cuanto un producto baje de cierto umbral, envíe una notificación inmediata a compras o incluso un aviso por WhatsApp. La automatización evita las roturas de stock antes de que ocurran.</p>
+
+        <h3>3. PDFs y Facturas en un Clic</h3>
+        <p>Convertir una fila de Google Sheets en un presupuesto en PDF profesional, guardarlo en una carpeta específica de Drive y enviárselo al cliente. Lo que antes tomaba 10 minutos, ahora toma <strong>2 segundos</strong>.</p>
+
+        <h3>4. Sincronización Multi-Departamento</h3>
+        <p>Si Ventas tiene su propia hoja y Operaciones otra, los errores de comunicación son inevitables. AppScript puede sincronizar ambas bases de datos en tiempo real, asegurando que todos vean la misma "verdad" sin duplicar trabajo.</p>
+
+        <h3>5. CRM Automatizado</h3>
+        <p>Desde que un cliente rellena un formulario en tu web hasta que aparece en tu Sheet, se le asigna un comercial y recibe un email de bienvenida. Todo el flujo de entrada de leads puede (y debe) estar automatizado.</p>
+
+        <div class="bg-gray-50 dark:bg-darkSurface p-8 rounded-2xl border-2 border-gray-100 dark:border-gray-800 my-12">
+          <h4 class="text-lightAccent font-black uppercase tracking-widest text-xs mb-4">Dato clave</h4>
+          <p class="text-xl font-bold text-gray-900 dark:text-white m-0 leading-tight">
+            A diferencia de herramientas como Zapier o Make, AppScript no tiene cuotas mensuales. Es la opción más rentable para automatizaciones internas de alto volumen.
+          </p>
+        </div>
+
+        <h2>Triggers: El interruptor de la eficiencia</h2>
+        <p>Un script solo es útil si sabe cuándo ejecutarse. Aquí es donde entran los <strong>Triggers (activadores)</strong>. Podemos configurar el software para que actúe:</p>
+        <ul>
+          <li><strong>Por tiempo:</strong> "Cada día a las 9 PM".</li>
+          <li><strong>Por acción:</strong> "Cada vez que alguien cambie el estado de un pedido a 'Enviado'".</li>
+          <li><strong>Por evento externo:</strong> "Cada vez que recibamos un nuevo formulario".</li>
+        </ul>
+
+        <h2>Conclusión: Menos "Picar Datos", Más Estrategia</h2>
+        <p>La automatización no va de sustituir personas, va de sustituir las tareas que aburren y agotan a las personas. Al eliminar el trabajo manual, permites que tu equipo se enfoque en lo que realmente hace crecer el negocio: la estrategia y la atención al cliente.</p>
+
+        <div class="not-prose my-16 p-10 bg-gray-900 dark:bg-white text-white dark:text-black rounded-[32px] text-center shadow-2xl overflow-hidden relative">
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-lightAccent/20 rounded-full blur-3xl"></div>
+          <h3 class="font-display font-black text-3xl md:text-4xl uppercase mb-6 leading-none tracking-tighter">¿Sobre qué temas te gustaría que hablemos?</h3>
+          <p class="mb-10 text-lg opacity-80 max-w-xl mx-auto font-medium">Queremos que este blog sea una herramienta útil para tu PYME. Cuéntanos qué procesos te gustaría automatizar o sobre qué herramientas quieres aprender más.</p>
+          <a href="mailto:hola@konte.es?subject=Sugerencia para el Blog" class="inline-block px-10 py-5 bg-lightAccent text-white font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+            Enviar mis sugerencias
           </a>
         </div>
 
       </div>
+
     </div>
   </article>
 

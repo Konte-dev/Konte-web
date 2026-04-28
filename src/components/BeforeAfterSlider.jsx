@@ -1,53 +1,20 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function BeforeAfterSlider() {
   const [position, setPosition] = useState(50);
-  const sliderRef = useRef(null);
 
   const handleDrag = (e) => {
-    if (!sliderRef.current) return;
-    const rect = sliderRef.current.getBoundingClientRect();
-    const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-    const percentage = (x / rect.width) * 100;
-    setPosition(percentage);
-  };
-
-  const handleMouseDown = (e) => {
-    handleDrag(e);
-    window.addEventListener('mousemove', handleDrag);
-    window.addEventListener('mouseup', handleMouseUp);
-  };
-
-  const handleMouseUp = () => {
-    window.removeEventListener('mousemove', handleDrag);
-    window.removeEventListener('mouseup', handleMouseUp);
-  };
-
-  const handleTouchStart = (e) => {
-    handleDrag(e);
-    window.addEventListener('touchmove', handleDrag, { passive: false });
-    window.addEventListener('touchend', handleTouchEnd);
-  };
-
-  const handleTouchEnd = () => {
-    window.removeEventListener('touchmove', handleDrag);
-    window.removeEventListener('touchend', handleTouchEnd);
+    setPosition(e.target.value);
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto my-16">
+    <div className="w-full max-w-6xl mx-auto my-16 select-none">
       <div className="text-center mb-12">
         <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-black uppercase mb-4 text-gray-900 dark:text-white">El Caos vs. La Solución</h2>
         <p className="text-lightTextSec dark:text-gray-400 text-lg md:text-xl font-medium max-w-3xl mx-auto">Desliza para descubrir cómo transformamos la operativa manual en un ecosistema centralizado.</p>
       </div>
       
-      <div 
-        ref={sliderRef}
-        className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden cursor-ew-resize border-4 border-white dark:border-darkSurface shadow-2xl"
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-      >
+      <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden border-4 border-white dark:border-darkSurface shadow-2xl">
         {/* AFTER IMAGE (Background) - The clean dashboard */}
         <div className="absolute inset-0 bg-gray-100 dark:bg-darkSurface flex items-center justify-center">
             {/* Realistic Mockup of a Dashboard */}
@@ -103,7 +70,7 @@ export default function BeforeAfterSlider() {
                     </div>
                 </div>
                 
-                <div className="absolute bottom-6 right-6 px-4 py-2 bg-darkAccent text-black font-bold rounded shadow-lg opacity-90 backdrop-blur-sm -rotate-3 hover:rotate-0 transition-transform text-xs md:text-sm pointer-events-none">
+                <div className="absolute bottom-6 right-6 px-4 py-2 bg-lightAccent text-white font-black rounded shadow-lg opacity-90 backdrop-blur-sm -rotate-3 hover:rotate-0 transition-transform text-xs md:text-sm pointer-events-none border-2 border-white">
                    App Nativa / Ecosistema Centralizado
                 </div>
             </div>
@@ -111,7 +78,7 @@ export default function BeforeAfterSlider() {
 
         {/* BEFORE IMAGE (Clipped on top) - The chaotic spreadsheet */}
         <div 
-          className="absolute inset-0 bg-white z-10"
+          className="absolute inset-0 bg-white z-10 pointer-events-none"
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         >
              {/* Mockup of chaotic Excel */}
@@ -130,7 +97,7 @@ export default function BeforeAfterSlider() {
                             {i % 5 === 0 && i % 7 !== 0 && i % 11 !== 0 && <span className="text-[8px] text-gray-400">NaN</span>}
                         </div>
                     ))}
-                    <div className="absolute top-1/4 left-[10%] md:left-1/4 p-3 md:p-4 bg-red-100 border-2 border-red-500 shadow-xl opacity-90 rotate-2 max-w-[80%] z-10 pointer-events-none">
+                    <div className="absolute top-1/4 left-[10%] md:left-1/4 p-3 md:p-4 bg-red-100 border-2 border-red-500 shadow-xl opacity-90 rotate-2 max-w-[80%] z-10">
                         <p className="text-red-700 font-bold font-sans text-xs md:text-base leading-tight">El archivo está dañado o bloqueado por "Administrador". No se pueden guardar cambios.</p>
                     </div>
                 </div>
@@ -139,7 +106,7 @@ export default function BeforeAfterSlider() {
 
         {/* Divider & Knob */}
         <div 
-          className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize flex items-center justify-center z-10 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+          className="absolute top-0 bottom-0 w-1 bg-white flex items-center justify-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none"
           style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
         >
           <div className="w-8 h-8 rounded-full bg-white text-gray-800 flex items-center justify-center shadow-lg border border-gray-200">
@@ -148,6 +115,17 @@ export default function BeforeAfterSlider() {
             </svg>
           </div>
         </div>
+
+        {/* HIDDEN RANGE INPUT (The actual controller) */}
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={position}
+          onChange={handleDrag}
+          className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+          aria-label="Desliza para comparar"
+        />
       </div>
     </div>
   );

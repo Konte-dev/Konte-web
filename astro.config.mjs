@@ -7,5 +7,5 @@ import sitemap from '@astrojs/sitemap';
 // IMPORTANT: Replace 'https://konte.es' with your actual production domain before deploying
 export default defineConfig({
   site: 'https://konte.es',
-  integrations: [tailwind(), react(), sitemap()]
+  integrations: [tailwind(), react()]
 });
