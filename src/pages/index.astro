@@ -613,7 +613,7 @@ const jsonLd = JSON.stringify({
     });
 
     // Custom Toast Logic
-    function showToast(message) {
+    function showToast(message: string) {
       const toast = document.getElementById('toast');
       const toastMsg = document.getElementById('toast-message');
       if (!toast || !toastMsg) return;
@@ -627,10 +627,12 @@ const jsonLd = JSON.stringify({
     }
 
     // Demo Form Logic
-    const demoForm = document.getElementById('demo-form');
+    const demoForm = document.getElementById('demo-form') as HTMLFormElement;
     demoForm?.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const submitBtn = demoForm.querySelector('button[type="submit"]');
+      const submitBtn = demoForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (!submitBtn) return;
+      
       const originalText = submitBtn.innerHTML;
       
       submitBtn.disabled = true;
