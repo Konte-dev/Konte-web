@@ -1,0 +1,86 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "5 Fórmulas de Google Sheets que ahorran horas de trabajo operativo",
+  "image": "https://konte.es/img/blog/hero-sheets-tips.png",
+  "author": { "@type": "Organization", "name": "Konte Solutions" },
+  "datePublished": "2026-04-29",
+  "url": "https://konte.es/blog/tips-formulas-google-sheets-empresa",
+  "keywords": ["fórmulas Google Sheets", "productividad empresa", "QUERY Google Sheets", "IMPORTRANGE", "automatizar hojas de cálculo"]
+});
+---
+
+<BlogLayout
+  title="5 Fórmulas Pro de Google Sheets para tu Empresa | Konte"
+  description="Domina Google Sheets con estas 5 fórmulas avanzadas que eliminan el trabajo manual. De QUERY a IMPORTRANGE, haz que tus datos trabajen por ti."
+  jsonLd={jsonLd}
+  ogImage="/img/blog/hero-sheets-tips.png"
+>
+  <div class="relative w-full h-64 md:h-[450px] overflow-hidden bg-gray-900 border-b-4 border-gray-900">
+    <img src="/img/blog/hero-sheets-tips.png" alt="Trucos avanzados de Google Sheets para empresas" class="w-full h-full object-cover opacity-90" />
+    <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div class="bg-lightAccent text-white p-6 md:p-10 border-4 border-white shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] transform rotate-1 max-w-lg text-center transition-transform hover:rotate-0 duration-500 pointer-events-auto">
+        <h2 class="font-display font-black text-4xl md:text-6xl uppercase leading-none tracking-tighter mb-2">Power User</h2>
+        <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-white/80">Fórmulas que ahorran tiempo</p>
+      </div>
+    </div>
+  </div>
+
+  <article class="py-16 bg-white dark:bg-darkBg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        {["Sheets", "Tutorial", "Eficiencia"].map(tag => (
+          <span class="px-3 py-1 bg-gray-100 dark:bg-darkSurface text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+        ))}
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight">
+        5 Fórmulas de Google Sheets que cambiarán tu forma de trabajar
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-400 mb-12 pb-8 border-b border-gray-200 dark:border-gray-800">
+        <span>29 de abril, 2026</span><span>&middot;</span>
+        <span>8 min de lectura</span><span>&middot;</span>
+        <span class="text-lightAccent dark:text-darkAccent font-bold">Konte Solutions</span>
+      </div>
+
+      <div class="prose prose-lg md:prose-xl dark:prose-invert max-w-none 
+        prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-headings:tracking-tighter
+        prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-p:leading-relaxed
+        prose-code:text-lightAccent dark:prose-code:text-darkAccent prose-code:bg-gray-100 dark:prose-code:bg-darkSurface prose-code:px-2 prose-code:rounded">
+
+        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed italic border-l-4 border-lightAccent pl-6 my-10">Saber usar Google Sheets es una cosa. Saber hacer que Google Sheets gestione tu empresa es otra. Aquí tienes las 5 herramientas que más usamos en Konte para ahorrar cientos de horas a nuestros clientes.</p>
+
+        <h2>1. QUERY: El superpoder de las bases de datos</h2>
+        <p>Si solo aprendes una fórmula hoy, que sea esta. <code>QUERY</code> te permite filtrar, ordenar y resumir datos usando un lenguaje similar a SQL. Olvida los filtros manuales.</p>
+        <p><strong>Ejemplo:</strong> <code>=QUERY(Ventas!A:Z; "select B, sum(C) where D = 'Completado' group by B")</code>. Con esto, puedes generar un informe de ventas por comercial en una sola línea de código.</p>
+
+        <h2>2. IMPORTRANGE: Conecta tus mundos</h2>
+        <p>Deja de copiar y pegar datos entre archivos. <code>IMPORTRANGE</code> trae datos de una hoja de cálculo a otra automáticamente. Ideal para separar la gestión interna de los informes que compartes con clientes o socios.</p>
+        <p><strong>Clave Konte:</strong> Úsala para centralizar datos de diferentes departamentos en un solo "Master Dashboard".</p>
+
+        <h2>3. ARRAYFORMULA: Escribe una vez, aplica mil veces</h2>
+        <p>¿Cansado de arrastrar fórmulas hacia abajo cada vez que añades una fila? <code>ARRAYFORMULA</code> aplica una operación a toda una columna automáticamente. Si entra un dato nuevo, la fórmula se aplica sola.</p>
+
+        <h2>4. UNIQUE + FILTER: Listas dinámicas sin esfuerzo</h2>
+        <p>Combina estas dos para obtener una lista única de clientes, proveedores o productos basándote en criterios específicos. Es la base para crear buscadores inteligentes dentro de tus hojas de gestión.</p>
+
+        <h2>5. VLOOKUP (o el moderno XLOOKUP) con IFERROR</h2>
+        <p>Cruzar datos es el pan de cada día. Usar <code>IFERROR(VLOOKUP(...); "No encontrado")</code> asegura que tus hojas no se llenen de errores <code>#N/A</code> que dan un aspecto poco profesional a tus informes.</p>
+
+        <p class="mt-12">Estas fórmulas son la punta del iceberg. En Konte, las combinamos con <strong>AppScript</strong> para crear sistemas que no solo calculan, sino que envían correos, generan PDFs y se sincronizan con tus aplicaciones externas.</p>
+        <p>Si sientes que tus hojas de cálculo son lentas o requieren demasiado mantenimiento manual, quizás no necesites más fórmulas, sino una arquitectura de datos profesional.</p>
+
+        <div class="not-prose my-16 p-10 bg-gray-900 dark:bg-white text-white dark:text-black rounded-[32px] text-center shadow-2xl overflow-hidden relative">
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-lightAccent/20 rounded-full blur-3xl"></div>
+          <h3 class="font-display font-black text-3xl md:text-4xl uppercase mb-6 leading-none tracking-tighter">¿Sobre qué temas te gustaría que hablemos?</h3>
+          <p class="mb-10 text-lg opacity-80 max-w-xl mx-auto font-medium">Queremos que este blog sea una herramienta útil para tu PYME. Cuéntanos qué procesos te gustaría automatizar o sobre qué herramientas quieres aprender más.</p>
+          <a href="mailto:contacto.konte@gmail.com?subject=Sugerencia para el Blog" class="inline-block px-10 py-5 bg-lightAccent text-white font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+            Enviar mis sugerencias
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BlogLayout>

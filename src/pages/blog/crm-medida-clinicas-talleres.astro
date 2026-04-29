@@ -1,0 +1,84 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "El CRM Perfecto para Clínicas y Talleres: Fidelización basada en Datos",
+  "image": "https://konte.es/img/blog/hero-crm-vertical.png",
+  "author": { "@type": "Organization", "name": "Konte Solutions" },
+  "datePublished": "2026-04-29",
+  "url": "https://konte.es/blog/crm-medida-clinicas-talleres",
+  "keywords": ["CRM clínicas", "gestión turnos taller", "fidelización clientes", "software personalizado PYME"]
+});
+---
+
+<BlogLayout
+  title="CRM a Medida para Clínicas y Talleres | Konte"
+  description="¿Recuerdas qué tratamiento se hizo tu cliente la última vez? Un CRM a medida te permite asesorar mejor y fidelizar a través del conocimiento profundo."
+  jsonLd={jsonLd}
+  ogImage="/img/blog/hero-crm-vertical.png"
+>
+  <div class="relative w-full h-64 md:h-[450px] overflow-hidden bg-gray-900 border-b-4 border-gray-900">
+    <img src="/img/blog/hero-crm-vertical.png" alt="CRM personalizado para negocios de servicios" class="w-full h-full object-cover opacity-90" />
+    <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div class="bg-lightAccent text-white p-6 md:p-10 border-4 border-white shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] transform rotate-1 max-w-lg text-center transition-transform hover:rotate-0 duration-500 pointer-events-auto">
+        <h2 class="font-display font-black text-4xl md:text-6xl uppercase leading-none tracking-tighter mb-2">CRM de Nicho</h2>
+        <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-white/80">Conoce, Asesora, Fideliza</p>
+      </div>
+    </div>
+  </div>
+
+  <article class="py-16 bg-white dark:bg-darkBg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        {["CRM", "Fidelización", "Servicios"].map(tag => (
+          <span class="px-3 py-1 bg-gray-100 dark:bg-darkSurface text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+        ))}
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight">
+        ¿Te imaginas recordar cada detalle de tu cliente antes de que entre por la puerta?
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-400 mb-12 pb-8 border-b border-gray-200 dark:border-gray-800">
+        <span>29 de abril, 2026</span><span>&middot;</span>
+        <span>7 min de lectura</span><span>&middot;</span>
+        <span class="text-lightAccent dark:text-darkAccent font-bold">Konte Solutions</span>
+      </div>
+
+      <div class="prose prose-lg md:prose-xl dark:prose-invert max-w-none 
+        prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-headings:tracking-tighter
+        prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-p:leading-relaxed">
+
+        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed italic border-l-4 border-lightAccent pl-6 my-10">En una clínica de estética, un taller mecánico o un centro de fisioterapia, la diferencia entre un cliente ocasional y uno fiel es la información. Saber qué tratamiento de uñas se hizo hace tres meses o qué pieza se cambió en la última revisión no es solo buena memoria, es un negocio inteligente.</p>
+
+        <h2>El problema de los CRMs genéricos</h2>
+        <p>Muchos negocios intentan usar herramientas estándar que son demasiado complejas para el día a día o demasiado simples para sus necesidades específicas. Un taller no necesita lo mismo que una inmobiliaria. Una clínica de uñas necesita registrar tonos de esmalte, fotos de la evolución y recordatorios de retoque.</p>
+        <p>Cuando el software no se adapta a ti, terminas usando libretas, Excels sueltos y WhatsApp para parchear las carencias. La información se fragmenta y la experiencia del cliente se resiente.</p>
+
+        <h2>Nuestra propuesta: Un CRM que habla tu idioma</h2>
+        <p>En Konte no instalamos programas; construimos <strong>sistemas operativos internos</strong>. Imagina este flujo para tu clínica o taller:</p>
+        <ul>
+          <li><strong>Historial Visual:</strong> Fotos y notas técnicas de cada sesión o reparación accesibles en un segundo.</li>
+          <li><strong>Recordatorios Automáticos:</strong> Que el sistema envíe un WhatsApp cuando toque la revisión o el mantenimiento, sin que tú hagas nada.</li>
+          <li><strong>Gestión de Turnos Inteligente:</strong> Un calendario que no solo reserva horas, sino que optimiza la carga de trabajo de tu equipo.</li>
+        </ul>
+
+        <h2>Asesoramiento basado en datos, no en suposiciones</h2>
+        <p>Cuando un cliente entra y puedes decirle: <em>"Veo que la última vez probamos este tratamiento y te funcionó muy bien, ¿seguimos con él o quieres probar esta variante según lo que anotamos?"</em>, el valor percibido se dispara. El cliente deja de sentir que es uno más y siente que estás cuidando de su caso personal.</p>
+
+        <h2>Digitalización sin complicaciones</h2>
+        <p>Lo mejor de nuestro modelo basado en el ecosistema de Google es que puedes acceder a toda esta información desde una tablet en la cabina o un móvil en el taller. Es rápido, es seguro y es tuyo para siempre. Sin cuotas mensuales por usuario que asfixian tu crecimiento.</p>
+        <p>Si quieres dejar de gestionar tu negocio "de memoria" y empezar a escalarlo con datos, hablemos sobre cómo podemos digitalizar tu saber hacer.</p>
+
+        <div class="not-prose my-16 p-10 bg-gray-900 dark:bg-white text-white dark:text-black rounded-[32px] text-center shadow-2xl overflow-hidden relative">
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-lightAccent/20 rounded-full blur-3xl"></div>
+          <h3 class="font-display font-black text-3xl md:text-4xl uppercase mb-6 leading-none tracking-tighter">¿Sobre qué temas te gustaría que hablemos?</h3>
+          <p class="mb-10 text-lg opacity-80 max-w-xl mx-auto font-medium">Queremos que este blog sea una herramienta útil para tu PYME. Cuéntanos qué procesos te gustaría automatizar o sobre qué herramientas quieres aprender más.</p>
+          <a href="mailto:contacto.konte@gmail.com?subject=Sugerencia para el Blog" class="inline-block px-10 py-5 bg-lightAccent text-white font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+            Enviar mis sugerencias
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BlogLayout>

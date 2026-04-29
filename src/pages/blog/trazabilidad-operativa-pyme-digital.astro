@@ -1,0 +1,85 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Trazabilidad Total: Adiós al Papel en la Gestión de Planta y Almacén",
+  "image": "https://konte.es/img/blog/hero-trazabilidad-planta.png",
+  "author": { "@type": "Organization", "name": "Konte Solutions" },
+  "datePublished": "2026-04-29",
+  "url": "https://konte.es/blog/trazabilidad-operativa-pyme-digital",
+  "keywords": ["trazabilidad producción", "digitalizar albaranes", "gestión almacén Google Sheets", "eficiencia operativa"]
+});
+---
+
+<BlogLayout
+  title="Trazabilidad Total en Planta y Almacén | Konte"
+  description="¿Sigues usando papel para controlar tu producción? Descubre cómo la digitalización de albaranes y procesos en tiempo real elimina errores y ahorra costes."
+  jsonLd={jsonLd}
+  ogImage="/img/blog/hero-trazabilidad-planta.png"
+>
+  <div class="relative w-full h-64 md:h-[450px] overflow-hidden bg-gray-900 border-b-4 border-gray-900">
+    <img src="/img/blog/hero-trazabilidad-planta.png" alt="Digitalización operativa en tiempo real" class="w-full h-full object-cover opacity-90" />
+    <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div class="bg-lightAccent text-white p-6 md:p-10 border-4 border-white shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] transform rotate-1 max-w-lg text-center transition-transform hover:rotate-0 duration-500 pointer-events-auto">
+        <h2 class="font-display font-black text-4xl md:text-6xl uppercase leading-none tracking-tighter mb-2">Trazabilidad</h2>
+        <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-white/80">Operativa Sin Papel</p>
+      </div>
+    </div>
+  </div>
+
+  <article class="py-16 bg-white dark:bg-darkBg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        {["Operativa", "Producción", "Almacén"].map(tag => (
+          <span class="px-3 py-1 bg-gray-100 dark:bg-darkSurface text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+        ))}
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight">
+        Trazabilidad Total: ¿Dónde está tu mercancía y qué está pasando en tu planta ahora mismo?
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-400 mb-12 pb-8 border-b border-gray-200 dark:border-gray-800">
+        <span>29 de abril, 2026</span><span>&middot;</span>
+        <span>7 min de lectura</span><span>&middot;</span>
+        <span class="text-lightAccent dark:text-darkAccent font-bold">Konte Solutions</span>
+      </div>
+
+      <div class="prose prose-lg md:prose-xl dark:prose-invert max-w-none 
+        prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-headings:tracking-tighter
+        prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-p:leading-relaxed">
+
+        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed italic border-l-4 border-lightAccent pl-6 my-10">El papel es el enemigo de la trazabilidad. Los albaranes que se pierden, los partes de producción que se leen mal y el desfase entre lo que ocurre en el almacén y lo que ves en el ordenador son los mayores ladrones de rentabilidad en una PYME.</p>
+
+        <h2>El fin de los albaranes perdidos</h2>
+        <p>¿Cuánto tiempo pierde tu equipo buscando un documento o confirmando si un pedido llegó completo? La digitalización operativa permite que cada entrada y salida de mercancía se registre en el momento, con una tablet o un móvil, alimentando una base de datos centralizada e indestructible.</p>
+        <p>En Konte, diseñamos sistemas donde la captura de datos es tan sencilla que los operarios prefieren usar el sistema digital que el antiguo papel.</p>
+
+        <h2>Control de producción en tiempo real</h2>
+        <p>Tener trazabilidad significa saber, con nombre y apellidos (y hora exacta), qué operario trabajó en qué lote, qué materia prima se usó y cuánto tiempo tomó la tarea. Esto no es solo control; es la base para <strong>calcular costes reales</strong> y detectar dónde estás perdiendo dinero.</p>
+        <p>Si tu margen depende de la eficiencia, no puedes permitirte descubrir un problema tres días después de que ocurriera.</p>
+
+        <h2>Sistemas que se adaptan al entorno industrial</h2>
+        <p>Sabemos que una planta o un almacén no es una oficina. Por eso, nuestras soluciones son:</p>
+        <ul>
+          <li><strong>Móviles:</strong> Funcionan en cualquier smartphone o tablet rugerizada.</li>
+          <li><strong>Simplificadas:</strong> Menos texto, más botones grandes y escaneo de códigos QR/Barras.</li>
+          <li><strong>Síncronas:</strong> Si alguien registra una rotura en el pasillo 4, la administración lo ve al instante.</li>
+        </ul>
+
+        <h2>De la reactividad a la proactividad</h2>
+        <p>Cuando tienes trazabilidad total, dejas de apagar fuegos. Puedes empezar a predecir roturas de stock antes de que ocurran o ajustar los turnos basándote en la velocidad real de producción, no en estimaciones optimistas.</p>
+        <p>Digitalizar tu operativa es la inversión más rentable que puedes hacer. Menos errores, menos desperdicio y un control total sobre el motor de tu negocio.</p>
+
+        <div class="not-prose my-16 p-10 bg-gray-900 dark:bg-white text-white dark:text-black rounded-[32px] text-center shadow-2xl overflow-hidden relative">
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-lightAccent/20 rounded-full blur-3xl"></div>
+          <h3 class="font-display font-black text-3xl md:text-4xl uppercase mb-6 leading-none tracking-tighter">¿Sobre qué temas te gustaría que hablemos?</h3>
+          <p class="mb-10 text-lg opacity-80 max-w-xl mx-auto font-medium">Queremos que este blog sea una herramienta útil para tu PYME. Cuéntanos qué procesos te gustaría automatizar o sobre qué herramientas quieres aprender más.</p>
+          <a href="mailto:contacto.konte@gmail.com?subject=Sugerencia para el Blog" class="inline-block px-10 py-5 bg-lightAccent text-white font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+            Enviar mis sugerencias
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BlogLayout>

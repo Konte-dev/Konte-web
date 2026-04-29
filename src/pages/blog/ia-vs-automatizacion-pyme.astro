@@ -1,0 +1,85 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "IA vs Automatización: Lo que tu PYME necesita de verdad hoy",
+  "image": "https://konte.es/img/blog/hero-ia-vs-automatizacion.png",
+  "author": { "@type": "Organization", "name": "Konte Solutions" },
+  "datePublished": "2026-04-29",
+  "url": "https://konte.es/blog/ia-vs-automatizacion-pyme",
+  "keywords": ["IA vs automatización", "automatizar procesos PYME", "ahorro costes empresa", "Google Sheets automatismos"]
+});
+---
+
+<BlogLayout
+  title="IA vs Automatización: El potencial real para tu negocio | Konte"
+  description="Todo el mundo habla de IA, pero el verdadero motor de rentabilidad para una PYME son los automatismos. Descubre la diferencia y por qué priorizar."
+  jsonLd={jsonLd}
+  ogImage="/img/blog/hero-ia-vs-automatizacion.png"
+>
+  <div class="relative w-full h-64 md:h-[450px] overflow-hidden bg-gray-900 border-b-4 border-gray-900">
+    <img src="/img/blog/hero-ia-vs-automatizacion.png" alt="IA vs Automatización pragmática" class="w-full h-full object-cover opacity-90" />
+    <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div class="bg-lightAccent text-white p-6 md:p-10 border-4 border-white shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] transform rotate-1 max-w-lg text-center transition-transform hover:rotate-0 duration-500 pointer-events-auto">
+        <h2 class="font-display font-black text-4xl md:text-6xl uppercase leading-none tracking-tighter mb-2">IA vs Automatismos</h2>
+        <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-white/80">Resultados Reales vs Hype</p>
+      </div>
+    </div>
+  </div>
+
+  <article class="py-16 bg-white dark:bg-darkBg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        {["IA", "Automatización", "Productividad"].map(tag => (
+          <span class="px-3 py-1 bg-gray-100 dark:bg-darkSurface text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-wide rounded">{tag}</span>
+        ))}
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight">
+        Todo el mundo habla de IA, pero tu empresa necesita Automatismos
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-400 mb-12 pb-8 border-b border-gray-200 dark:border-gray-800">
+        <span>29 de abril, 2026</span><span>&middot;</span>
+        <span>6 min de lectura</span><span>&middot;</span>
+        <span class="text-lightAccent dark:text-darkAccent font-bold">Konte Solutions</span>
+      </div>
+
+      <div class="prose prose-lg md:prose-xl dark:prose-invert max-w-none 
+        prose-headings:font-display prose-headings:uppercase prose-headings:font-black prose-headings:tracking-tighter
+        prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-p:leading-relaxed">
+
+        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed italic border-l-4 border-lightAccent pl-6 my-10">La IA es fascinante para escribir correos o generar imágenes, pero no va a arreglar que tu inventario no cuadre o que pierdas horas pasando datos de un PDF a una hoja de cálculo. Para eso, necesitas ingeniería de procesos, no un chatbot.</p>
+
+        <h2>El peligro de la "Moda IA"</h2>
+        <p>Hoy en día, parece que si un software no tiene "IA" en el nombre, no vale nada. Sin embargo, para la mayoría de PYMES, implementar una IA compleja es como comprar un Ferrari para ir por caminos de tierra: es caro, difícil de mantener y no resuelve el problema de base.</p>
+        <p>La IA es probabilística (adivina qué decir), mientras que la <strong>automatización es determinística</strong> (hace exactamente lo que debe, siempre). En la gestión de un negocio, quieres certezas, no adivinanzas.</p>
+
+        <h2>¿Qué es un automatismo pragmático?</h2>
+        <p>Un automatismo es un sistema diseñado para ejecutar tareas repetitivas sin intervención humana. En Konte, no te vendemos una IA que "piensa por ti", te construimos sistemas que "trabajan por ti":</p>
+        <ul>
+          <li><strong>Digitalización de Albaranes:</strong> Que los datos entren solos al sistema al recibir una mercancía.</li>
+          <li><strong>Sincronización de Stock:</strong> Que si vendes en tu tienda física, tu web se actualice al instante.</li>
+          <li><strong>Alertas de Margen:</strong> Que el sistema te avise si el coste de un proveedor sube y tu beneficio peligra.</li>
+        </ul>
+
+        <h2>IA como complemento, no como base</h2>
+        <p>¿Significa esto que la IA no sirve? En absoluto. En Konte la usamos para <strong>potenciar</strong> los automatismos. Por ejemplo: una IA puede leer una factura escrita a mano y extraer el importe, pero es el automatismo el que debe registrar ese gasto en tu contabilidad y compararlo con el presupuesto.</p>
+        <p>La clave es el orden: primero automatiza tus procesos básicos. Una vez que tu empresa sea un reloj suizo digital, entonces podemos añadir capas de IA para análisis predictivo o atención al cliente.</p>
+
+        <h2>Resultados tangibles en 30 días</h2>
+        <p>Mientras un proyecto de IA "estratégico" puede tardar meses en dar resultados inciertos, un automatismo bien diseñado empieza a ahorrar horas de trabajo desde la primera semana. En Konte nos centramos en ese ROI inmediato.</p>
+        <p>No busques la próxima tecnología mágica. Busca los procesos que hoy te quitan tiempo y dinero, y déjanos convertirlos en un motor silencioso que funcione solo.</p>
+
+        <div class="not-prose my-16 p-10 bg-gray-900 dark:bg-white text-white dark:text-black rounded-[32px] text-center shadow-2xl overflow-hidden relative">
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-lightAccent/20 rounded-full blur-3xl"></div>
+          <h3 class="font-display font-black text-3xl md:text-4xl uppercase mb-6 leading-none tracking-tighter">¿Sobre qué temas te gustaría que hablemos?</h3>
+          <p class="mb-10 text-lg opacity-80 max-w-xl mx-auto font-medium">Queremos que este blog sea una herramienta útil para tu PYME. Cuéntanos qué procesos te gustaría automatizar o sobre qué herramientas quieres aprender más.</p>
+          <a href="mailto:contacto.konte@gmail.com?subject=Sugerencia para el Blog" class="inline-block px-10 py-5 bg-lightAccent text-white font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+            Enviar mis sugerencias
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BlogLayout>
