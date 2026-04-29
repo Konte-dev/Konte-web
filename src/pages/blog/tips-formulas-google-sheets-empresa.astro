@@ -50,27 +50,30 @@ const jsonLd = JSON.stringify({
         prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-p:leading-relaxed
         prose-code:text-lightAccent dark:prose-code:text-darkAccent prose-code:bg-gray-100 dark:prose-code:bg-darkSurface prose-code:px-2 prose-code:rounded">
 
-        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed italic border-l-4 border-lightAccent pl-6 my-10">Saber usar Google Sheets es una cosa. Saber hacer que Google Sheets gestione tu empresa es otra. Aquí tienes las 5 herramientas que más usamos en Konte para ahorrar cientos de horas a nuestros clientes.</p>
+        <p class="text-xl text-lightTextSec dark:text-darkTextSec leading-relaxed italic border-l-4 border-lightAccent pl-6 my-10">Google Sheets es la herramienta de trabajo más utilizada por las pequeñas empresas en España, y también la más subutilizada. La mayoría de los que la usan cada día solo rascan la superficie. Con estas cinco herramientas, puedes hacer el trabajo de una hora en diez minutos.</p>
 
-        <h2>1. QUERY: El superpoder de las bases de datos</h2>
-        <p>Si solo aprendes una fórmula hoy, que sea esta. <code>QUERY</code> te permite filtrar, ordenar y resumir datos usando un lenguaje similar a SQL. Olvida los filtros manuales.</p>
-        <p><strong>Ejemplo:</strong> <code>=QUERY(Ventas!A:Z; "select B, sum(C) where D = 'Completado' group by B")</code>. Con esto, puedes generar un informe de ventas por comercial en una sola línea de código.</p>
+        <h2>Antes de empezar: esto no es un curso de programación</h2>
+        <p>No tienes que saber programar. No tienes que entender de tecnología. Solo tienes que conocer algunas de las "recetas" que ya existen dentro de Google Sheets y que la mayoría de la gente no sabe que están ahí. Piénsalo como aprender a usar el lavavajillas en lugar de fregar a mano: la máquina ya existe, solo hay que saber encenderla.</p>
 
-        <h2>2. IMPORTRANGE: Conecta tus mundos</h2>
-        <p>Deja de copiar y pegar datos entre archivos. <code>IMPORTRANGE</code> trae datos de una hoja de cálculo a otra automáticamente. Ideal para separar la gestión interna de los informes que compartes con clientes o socios.</p>
-        <p><strong>Clave Konte:</strong> Úsala para centralizar datos de diferentes departamentos en un solo "Master Dashboard".</p>
+        <h2>1. QUERY: el filtro que lo hace todo</h2>
+        <p>Imagina que tienes una lista con cientos de pedidos y quieres ver solo los que están pendientes, ordenados por fecha y agrupados por cliente. Con los filtros normales, eso te llevaría diez minutos cada vez. Con QUERY, lo tienes en un segundo y siempre se actualiza solo.</p>
+        <p>Es la fórmula que más horas ahorra en cualquier empresa que maneje listas de datos. Una vez que la usas, no puedes creer que hayas vivido sin ella.</p>
 
-        <h2>3. ARRAYFORMULA: Escribe una vez, aplica mil veces</h2>
-        <p>¿Cansado de arrastrar fórmulas hacia abajo cada vez que añades una fila? <code>ARRAYFORMULA</code> aplica una operación a toda una columna automáticamente. Si entra un dato nuevo, la fórmula se aplica sola.</p>
+        <h2>2. IMPORTRANGE: conecta tus archivos entre sí</h2>
+        <p>Si tienes datos repartidos en varios archivos de Google Sheets y pierdes tiempo copiando y pegando de uno a otro, esto es para ti. Con IMPORTRANGE, un archivo puede "leer" los datos de otro en tiempo real. Cada vez que alguien actualiza el archivo de ventas, el de contabilidad se actualiza solo.</p>
+        <p>Muchos de nuestros clientes llevan años haciendo ese copiado manualmente. Cuando ven esta fórmula por primera vez, la reacción es siempre la misma: <em>"¿Y esto existía todo este tiempo?"</em></p>
 
-        <h2>4. UNIQUE + FILTER: Listas dinámicas sin esfuerzo</h2>
-        <p>Combina estas dos para obtener una lista única de clientes, proveedores o productos basándote en criterios específicos. Es la base para crear buscadores inteligentes dentro de tus hojas de gestión.</p>
+        <h2>3. ARRAYFORMULA: escribe una fórmula, trabaja para siempre</h2>
+        <p>Cada vez que añades una fila nueva a tu hoja, tienes que bajar la fórmula de la fila anterior. O alguien se olvida y esa fila queda sin calcular. Con ARRAYFORMULA, la fórmula se aplica sola a todas las filas, incluidas las que aún no existen. Es un pequeño cambio que elimina un error que ocurre más de lo que parece.</p>
 
-        <h2>5. VLOOKUP (o el moderno XLOOKUP) con IFERROR</h2>
-        <p>Cruzar datos es el pan de cada día. Usar <code>IFERROR(VLOOKUP(...); "No encontrado")</code> asegura que tus hojas no se llenen de errores <code>#N/A</code> que dan un aspecto poco profesional a tus informes.</p>
+        <h2>4. Buscar datos entre tablas sin buscarlos tú</h2>
+        <p>¿Tienes una lista de facturas y otra de clientes y necesitas cruzarlas para saber qué factura pertenece a quién? Existe una fórmula para eso. En vez de buscar a mano, el sistema lo hace solo. Si el dato no está, en lugar de mostrar un error rojo que asusta, puedes decirle que ponga "No encontrado" o simplemente que deje la celda vacía.</p>
 
-        <p class="mt-12">Estas fórmulas son la punta del iceberg. En Konte, las combinamos con <strong>AppScript</strong> para crear sistemas que no solo calculan, sino que envían correos, generan PDFs y se sincronizan con tus aplicaciones externas.</p>
-        <p>Si sientes que tus hojas de cálculo son lentas o requieren demasiado mantenimiento manual, quizás no necesites más fórmulas, sino una arquitectura de datos profesional.</p>
+        <h2>5. Listas que se actualizan solas</h2>
+        <p>Si necesitas tener una lista de proveedores activos, o de los productos que quedan en stock, o de los clientes de un determinado tipo, existen fórmulas que generan esa lista automáticamente basándose en los datos que tienes. Cuando añades un proveedor nuevo, aparece solo en la lista. Cuando un producto se agota, desaparece.</p>
+        <p>Esto que parece magia es lo que separa un archivo de Google Sheets normal de uno que trabaja para tu empresa.</p>
+
+        <p class="mt-10">Estas cinco herramientas son el punto de partida. En Konte las combinamos con sistemas personalizados para que tu empresa funcione de manera más ordenada, sin necesitar a alguien que "lo sabe todo de ordenadores". Si esto te ha parecido útil, imagina lo que podemos hacer con un sistema hecho exactamente para tu negocio.</p>
 
         <div class="not-prose my-16 p-10 bg-gray-900 dark:bg-white text-white dark:text-black rounded-[32px] text-center shadow-2xl overflow-hidden relative">
           <div class="absolute -top-24 -right-24 w-64 h-64 bg-lightAccent/20 rounded-full blur-3xl"></div>
