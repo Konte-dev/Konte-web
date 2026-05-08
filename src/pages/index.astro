@@ -126,8 +126,42 @@ const jsonLd = JSON.stringify({
     </div>
   </nav>
 
-  <main class="pt-32 pb-16 bg-white dark:bg-black">
-    <!-- Hero Section -->
+  <main class="pt-32 pb-16 bg-white dark:bg-black relative">
+    
+    <!-- Wrapper para los iconos flotantes -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="floating-icons-wrapper">
+      <img src="/img/icons/konte_icon_1.png" class="absolute w-32 md:w-48 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 100px; left: 2%;" alt="" />
+      <img src="/img/icons/konte_icon_2.png" class="absolute w-40 md:w-56 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 150px; right: 2%;" alt="" />
+      <img src="/img/icons/konte_icon_3.png" class="absolute w-36 md:w-52 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 300px; left: 8%;" alt="" />
+      <img src="/img/icons/konte_icon_4.png" class="absolute w-32 md:w-48 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 400px; right: 8%;" alt="" />
+      <img src="/img/icons/konte_icon_5.png" class="absolute w-48 md:w-64 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 550px; left: 5%;" alt="" />
+      <img src="/img/icons/konte_icon_6.png" class="absolute w-40 md:w-56 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 600px; right: 4%;" alt="" />
+      <img src="/img/icons/konte_icon_7.png" class="absolute w-24 md:w-36 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 800px; left: 15%;" alt="" />
+      <img src="/img/icons/konte_icon_8.png" class="absolute w-40 md:w-56 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 850px; right: 12%;" alt="" />
+      <img src="/img/icons/konte_icon_9.png" class="absolute w-36 md:w-52 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 1000px; left: 2%;" alt="" />
+      <img src="/img/icons/konte_icon_10.png" class="absolute w-32 md:w-48 mix-blend-multiply dark:invert dark:mix-blend-screen opacity-90 floating-icon" style="top: 1100px; right: 5%;" alt="" />
+    </div>
+
+    <!-- Script de Parallax para los iconos flotantes -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const icons = document.querySelectorAll('.floating-icon');
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY;
+          icons.forEach((icon, index) => {
+            // Cada icono se mueve a distinta velocidad para crear efecto 3D
+            const speed = 0.15 + (index * 0.08); 
+            // Transformación de parallax hacia arriba mientras scrolleamos hacia abajo
+            (icon as HTMLElement).style.transform = `translateY(-${scrollY * speed}px)`;
+          });
+        });
+      });
+    </script>
+
+      <!-- Contenido en Z superior -->
+      <div class="relative z-10">
+      
+        <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mb-8 text-center">
       <div class="max-w-5xl mx-auto">
         <h1 class="font-display text-5xl md:text-6xl font-black mb-8 text-gray-900 dark:text-white uppercase leading-[0.9] tracking-tighter">
@@ -335,6 +369,8 @@ const jsonLd = JSON.stringify({
         </div>
       </div>
     </section>
+      </div> <!-- /Contenido en Z superior -->
+    </div> <!-- /Wrapper para el fondo -->
 
     <!-- Marketing / Web Services Section (Now Centered Diagnosis) -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-0 text-center">

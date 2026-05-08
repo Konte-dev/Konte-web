@@ -36,7 +36,8 @@ const services = [
       "Sistemas de búsqueda y filtrado ultra-rápidos",
       "Limpieza de duplicados y normalización"
     ],
-    accent: "blue"
+    accent: "blue",
+    image: "/img/servicios/sheets.png"
   },
   {
     id: "automatizacion-appscript",
@@ -52,7 +53,8 @@ const services = [
       "Conexión con APIs externas (Stripe, WhatsApp...)",
       "Registro de errores y logs de ejecución"
     ],
-    accent: "blue"
+    accent: "blue",
+    image: "/img/servicios/automation.png"
   },
   {
     id: "software-customizado",
@@ -68,7 +70,8 @@ const services = [
       "Adaptado a móviles y tablets (Responsive)",
       "Sin cuotas mensuales de alojamiento (0€/mes)"
     ],
-    accent: "blue"
+    accent: "blue",
+    image: "/img/servicios/webapp.png"
   },
   {
     id: "creacion-formularios",
@@ -84,7 +87,8 @@ const services = [
       "Validación de NIF/CIF, emails y teléfonos",
       "Notificaciones push automáticas al recibir datos"
     ],
-    accent: "blue"
+    accent: "blue",
+    image: "/img/servicios/forms.png"
   },
   {
     id: "formularios-leads-magnet",
@@ -100,7 +104,8 @@ const services = [
       "Trackeo de procedencia (Google/Facebook/RRSS)",
       "Cálculo de ROI por lead integrado"
     ],
-    accent: "blue"
+    accent: "blue",
+    image: "/img/servicios/leads.png"
   },
   {
     id: "dashboards-tiempo-real",
@@ -116,7 +121,8 @@ const services = [
       "Acceso compartido y seguro para socios",
       "Alertas automáticas de KPIs críticos"
     ],
-    accent: "blue"
+    accent: "blue",
+    image: "/img/servicios/dashboards.png"
   }
 ];
 ---
@@ -150,21 +156,23 @@ const services = [
         {services.map((service, i) => (
           <article id={service.id} class="flex flex-col md:flex-row border-2 border-gray-100 dark:border-gray-800 rounded-3xl overflow-hidden hover:border-lightAccent transition-all duration-500 hover:shadow-2xl group/card">
             <!-- Left: Info -->
-            <div class="flex-1 p-8 md:p-14 bg-white dark:bg-gray-900">
-              <div class="flex items-start justify-between mb-8">
-                <div class="w-20 h-20 text-lightAccent bg-blue-50 dark:bg-blue-900/20 p-4 rounded-2xl border border-blue-100 dark:border-blue-800 group-hover/card:scale-110 transition-transform duration-500" set:html={service.icon} />
-                <span class="text-5xl font-black text-gray-100 dark:text-gray-800 tracking-tighter opacity-50">0{i + 1}</span>
-              </div>
-              
-              <h2 class="font-display text-3xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gray-900 dark:text-white leading-tight">
-                {service.title}
-              </h2>
-              <p class="text-lightAccent font-black text-sm uppercase tracking-widest mb-6">{service.subtitle}</p>
-              <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10 font-medium">{service.description}</p>
-              
-              <div class="p-8 bg-gray-50 dark:bg-gray-800/50 border-l-8 border-lightAccent rounded-r-2xl">
-                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-lightAccent mb-3">¿Cuándo necesito este servicio?</p>
-                <p class="text-gray-900 dark:text-gray-200 font-bold text-lg md:text-xl leading-relaxed">"{service.whenToUse}"</p>
+            <div class="flex-1 p-8 md:p-14 bg-gray-900 relative">
+              <div class="relative z-10">
+                <div class="flex items-start justify-between mb-8">
+                  <div class="w-20 h-20 text-lightAccent bg-lightAccent/10 p-4 rounded-2xl border border-lightAccent/20 group-hover/card:scale-110 transition-transform duration-500" set:html={service.icon} />
+                  <span class="text-5xl font-black text-white tracking-tighter opacity-10">0{i + 1}</span>
+                </div>
+                
+                <h2 class="font-display text-3xl md:text-5xl font-black uppercase tracking-tight mb-4 text-white leading-tight">
+                  {service.title}
+                </h2>
+                <p class="text-lightAccent font-black text-sm uppercase tracking-widest mb-6">{service.subtitle}</p>
+                <p class="text-xl text-gray-300 leading-relaxed mb-10 font-medium">{service.description}</p>
+                
+                <div class="p-8 bg-white/5 border-l-8 border-lightAccent rounded-r-2xl shadow-sm">
+                  <p class="text-[10px] font-black uppercase tracking-[0.2em] text-lightAccent mb-3">¿Cuándo necesito este servicio?</p>
+                  <p class="text-white font-bold text-lg md:text-xl leading-relaxed">"{service.whenToUse}"</p>
+                </div>
               </div>
             </div>
 
